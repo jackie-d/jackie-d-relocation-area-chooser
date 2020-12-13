@@ -27,7 +27,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem, mdbDropdown, mdbDropdownMenu, mdbDropdownItem,  mdbInput } from 'mdbvue';
+import { mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem, mdbDropdown, mdbDropdownToggle, mdbDropdownMenu, mdbDropdownItem,  mdbInput } from 'mdbvue';
 
 export default Vue.extend({
     components: {
@@ -38,6 +38,7 @@ export default Vue.extend({
         mdbNavItem,
         mdbDropdown,
         mdbDropdownMenu,
+        mdbDropdownToggle,
         mdbInput,
         mdbDropdownItem
     },
