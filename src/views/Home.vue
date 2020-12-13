@@ -1,4 +1,6 @@
 <template>
+  <mdb-container>
+  <navbar />
   <div class="home">
     <h1>Relocation Area Chooser</h1>
     <p>Start View from Scratch</p>
@@ -14,17 +16,21 @@
         </div>
       </mdb-card>
   </div>
+  </mdb-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 
 import { mdbCard, mdbBtn } from 'mdbvue';
+import navbar from '@/components/navbar.vue';
 
 export default Vue.extend({
   name: 'Home',
   components: {
-    mdbCard, mdbBtn
+    mdbCard, 
+    mdbBtn,
+    navbar
   },
 });
 </script>
