@@ -14,11 +14,17 @@
   font-style: normal;
 }
 
+html, body{
+  height: 100%;
+}
+
 #app {
+  height: 100%;
   font-family: "Andika New Basic", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
+
 </style>

@@ -1,6 +1,11 @@
 {
   "dashboard": {
     "welcome": "Welcome to Relocation Area Chooser",
-    "description": "We want to help you find the right place for you! Start now and select your preferred destination with ease."
+    "description": "We want to help you find the right place for you! Start now and select your preferred destination with ease.",
+    "start": "Start the exploration!"
+  },
+  "footer": {
+    "title": "Find the right place for you",
+    "description": "Thanks to Relocation Area Chooser you can find now the best city, just follow the procedure and find it now!"
   }
 }
