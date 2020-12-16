@@ -20,47 +20,47 @@ const routes: Array<RouteConfig> = [
     component: Home
   },
   {
-    path: '/',
+    path: '/name',
     name: 'Name',
     component: Name
   },
   {
-    path: '/',
+    path: '/cities',
     name: 'Cities',
     component: Cities
   },
   {
-    path: '/',
+    path: '/weather',
     name: 'Weather',
     component: Weather
   },
   {
-    path: '/',
+    path: '/weather-detail',
     name: 'WeatherDetail',
     component: WeatherDetail
   },
   {
-    path: '/',
+    path: '/flights',
     name: 'Flights',
     component: Flights
   },
   {
-    path: '/',
+    path: '/flights-detail',
     name: 'FlightsDetail',
     component: FlightsDetail
   },
   {
-    path: '/',
+    path: '/resume',
     name: 'Resume',
     component: Resume
   },
   {
-    path: '/',
+    path: '/result',
     name: 'Result',
     component: Result
   },
   {
-    path: '/',
+    path: '/history',
     name: 'History',
     component: History
   }

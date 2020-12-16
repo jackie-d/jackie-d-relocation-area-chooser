@@ -15,7 +15,7 @@
                     </mdb-nav-item>
                 </router-link>
                 <router-link 
-                    to="/cities"
+                    to="/name"
                     v-slot="{ href, route, navigate, isActive }"
                      v-if="isMenuShown"
                 >

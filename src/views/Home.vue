@@ -9,7 +9,7 @@
               <p class="mx-5 mb-5">
                 {{ $t('dashboard.description') }}
               </p>
-              <mdb-btn outline="white" size="md" icon="search-location">{{ $t('dashboard.start') }}</mdb-btn>
+              <mdb-btn v-on:click="start" outline="white" size="md" icon="search-location">{{ $t('dashboard.start') }}</mdb-btn>
             </div>
           </div>
         </mdb-card>
@@ -25,6 +25,8 @@ import { mdbContainer, mdbCard, mdbBtn } from 'mdbvue';
 import navbar from '@/components/navbar.vue';
 import mainFooter from '@/components/main-footer.vue';
 
+import router from '../router/index';
+
 export default Vue.extend({
   name: 'Home',
   components: {
@@ -34,5 +36,10 @@ export default Vue.extend({
     navbar,
     mainFooter
   },
+  methods: {
+    start: function() {
+      router.push('name');
+    }
+  }
 });
 </script>

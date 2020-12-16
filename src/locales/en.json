@@ -1,4 +1,7 @@
 {
+  "common": {
+    "close": "Close"
+  },
   "dashboard": {
     "welcome": "Welcome to Relocation Area Chooser",
     "description": "We want to help you find the right place for you! Start now and select your preferred destination with ease.",
@@ -7,5 +10,13 @@
   "footer": {
     "title": "Find the right place for you",
     "description": "Thanks to Relocation Area Chooser you can find now the best city, just follow the procedure and find it now!"
+  },
+  "name": {
+    "title": "What's your name?",
+    "desc": "Let's start togheter our journey to discover a good destination for you",
+    "your_name": "Your name:",
+    "name_placeholder": "Write your name here",
+    "invalid_name_title": "Insert your name",
+    "invalid_name_desc": "Please write down your name to get the to the next step"
   }
 }

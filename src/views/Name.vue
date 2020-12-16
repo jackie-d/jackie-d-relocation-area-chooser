@@ -1,37 +1,92 @@
 <template>
   <mdb-container fluid style="height: 100%">
     <navbar v-bind:showMenu="false" />
-    <div class="home">
-        <mdb-card class="card-image" :style="{ backgroundImage: 'url(' + require('@/assets/gradient1.jpg') + ')' }">
-          <div class="text-white text-center py-5 px-4 my-5">
-            <div>
-              <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>{{ $t('dashboard.welcome') }}</strong></h2>
-              <p class="mx-5 mb-5">
-                {{ $t('dashboard.description') }}
-              </p>
-              <mdb-btn outline="white" size="md" icon="search-location">{{ $t('dashboard.start') }}</mdb-btn>
-            </div>
-          </div>
-        </mdb-card>
-    </div>
+    
+    <section class="text-center">
+        <h2 class="h1 pt-4">{{ $t('name.title') }}</h2>
+
+        <p class="grey-text mb-5 mt-5 px-3">{{ $t('name.desc') }}</p>
+        <mdb-row class="justify-content-sm-center">
+
+          <mdb-col sm="6">
+            <mdb-card testimonial>
+              <mdb-card-up gradient="rainy-ashville"></mdb-card-up>
+              <mdb-card-avatar color="white" class="mx-auto mt-4"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle"></mdb-card-avatar>
+              <mdb-card-body>
+                <mdb-card-title>{{ $t('name.your_name') }}</mdb-card-title>
+                <mdb-input 
+                  v-model="name" 
+                />
+                <hr/>
+                <mdb-btn color="primary" v-on:click="goToCities">
+                  <mdb-icon icon="eye" />
+                  Let's find the city
+                </mdb-btn>
+              </mdb-card-body>
+            </mdb-card>
+          </mdb-col>
+
+        </mdb-row>
+      </section>
+  
+      <mdb-modal :show="modal" @close="modal = false">
+        <mdb-modal-header>
+          <mdb-modal-title>{{ $t('name.invalid_name_title') }}</mdb-modal-title>
+        </mdb-modal-header>
+        <mdb-modal-body>{{ $t('name.invalid_name_desc') }}</mdb-modal-body>
+        <mdb-modal-footer>
+          <mdb-btn color="secondary" @click.native="modal = false">{{ $t('common.close') }}</mdb-btn>
+        </mdb-modal-footer>
+      </mdb-modal>
+
+
   </mdb-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 
-import { mdbContainer, mdbCard, mdbBtn } from 'mdbvue';
+import { mdbModal, mdbModalHeader, mdbModalTitle, mdbModalBody, mdbModalFooter, mdbContainer, mdbCard, mdbBtn, mdbRow, mdbCol, mdbCardUp, mdbCardAvatar, mdbCardBody, mdbCardTitle, mdbIcon, mdbInput } from 'mdbvue';
 import navbar from '@/components/navbar.vue';
 import mainFooter from '@/components/main-footer.vue';
+import router from '../router'
 
 export default Vue.extend({
   name: 'Home',
+  data: function() {
+    return {
+      name: '',
+      modal: false
+    }
+  },
+  methods: {
+    goToCities: function() {
+        if ( this.name && this.name != '' ) {
+          router.push('/cities');
+        } else {
+          this.modal = true;
+        }
+    }
+  },
   components: {
     mdbContainer,
     mdbCard, 
     mdbBtn,
     navbar,
-    mainFooter
+    mainFooter,
+    mdbRow,
+    mdbCol,
+    mdbCardUp, 
+    mdbCardAvatar, 
+    mdbCardBody, 
+    mdbCardTitle, 
+    mdbIcon,
+    mdbInput,
+    mdbModal, 
+    mdbModalHeader, 
+    mdbModalTitle,
+    mdbModalBody, 
+    mdbModalFooter
   },
 });
 </script>
