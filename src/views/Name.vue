@@ -1,6 +1,6 @@
 <template>
   <mdb-container fluid style="height: 100%">
-    <navbar />
+    <navbar v-bind:showMenu="false" />
     <div class="home">
         <mdb-card class="card-image" :style="{ backgroundImage: 'url(' + require('@/assets/gradient1.jpg') + ')' }">
           <div class="text-white text-center py-5 px-4 my-5">
@@ -14,7 +14,6 @@
           </div>
         </mdb-card>
     </div>
-    <mainFooter />
   </mdb-container>
 </template>
 
