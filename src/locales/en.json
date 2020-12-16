@@ -18,5 +18,16 @@
     "name_placeholder": "Write your name here",
     "invalid_name_title": "Insert your name",
     "invalid_name_desc": "Please write down your name to get the to the next step"
+  },
+  "cities": {
+    "title": "Proposed cities",
+    "desc": "A quick look for the best areas for you relocation",
+    "city_1_title": "Amsterdam",
+    "city_1_desc": "<b>Title</b><br />Test",
+    "city_2_title": "Madrid",
+    "city_2_desc": "<b>Title</b><br />Test",
+    "city_3_title": "Budapest",
+    "city_3_desc": "<b>Title</b><br />Test",
+    "start_selection": "Start your experience"
   }
 }
