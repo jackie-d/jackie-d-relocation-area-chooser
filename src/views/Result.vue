@@ -4,7 +4,7 @@
   <mdb-container fluid style="height: 100%">
 
     <section class="text-center">
-      <h2 class="h1 pt-4">{{ $t('result.title') }}</h2>
+      <h2 class="h1 pt-4">{{ $t('result.title') }} {{historyChosenCity}}</h2>
     </section>
 
     <mdb-row>
@@ -31,7 +31,7 @@
               <mdb-row class="mt-4">
                 <mdb-col class="scrollbar scrollbar-primary">
                     <p style="font-size: smaller;" class="grey-text">{{ $t('result.flights_cost') }}</p>
-                    <mdb-tbl>
+                    <mdb-tbl sm>
                       <mdb-tbl-head>
                         <tr>
                           <th>{{ $t('flights.destination') }}</th>
@@ -71,7 +71,11 @@
 
     </mdb-row>
     <div class="mt-4 pb-4">
-      <mdb-btn color="primary" v-on:click="goToNext" :disabled="chosenCity === undefined"><mdb-icon icon="arrow-right" class="mr-1"/> {{ $t('result.next_step') }}</mdb-btn>
+      <mdb-btn color="primary" v-on:click="goToHome">
+        <mdb-icon icon="cloud-upload-alt" class="mr-1"/> 
+        <span v-if="!isFromHistory" class="ml-2">{{ $t('result.next_step') }}</span>
+        <span v-if="isFromHistory" class="ml-2">{{ $t('result.back_to_history') }}</span>
+      </mdb-btn>
     </div>
   </mdb-container>
   </div>
@@ -96,18 +100,21 @@
     data: function() {
       return {
         cities: store.state.cities, 
-        chosenCity: undefined,
         finalChosenCity: store.state.finalChosenCity,
-        name: store.state.name
+        name: store.state.name,
+        isFromHistory: false
       }
     },
     methods: {
-      goToNext: function() {
-        store.commit('CHOOSE_FINAL', this.chosenCity);
-        router.push('/result');
-      },
-      select: function(cityIndex) {
-        this.chosenCity = cityIndex;
+      goToHome: function() {
+        if ( !this.isFromHistory ) {
+          store.commit('STORE_RESULT', {
+            chosenCity: this.finalChosenCity,
+            time: new Date(),
+            name: this.name
+          });
+        }
+        router.push('/');
       }
     },
     mounted: function() {
@@ -117,6 +124,11 @@
         ]).then(() => {
           console.log('Flights init');
         });
+        //
+        if ( this.$route.query.historyChosenCity ) {
+          this.finalChosenCity = this.$route.query.historyChosenCity;
+          this.isFromHistory = true;
+        }
     },
     components: {
       mdbContainer,

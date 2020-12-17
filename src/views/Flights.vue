@@ -22,7 +22,7 @@
                   <mdb-row>
                     <mdb-col class="scrollbar scrollbar-primary">
                         <p style="font-size: smaller;" class="grey-text">{{ $t('flights.flights_cost') }}</p>
-                        <mdb-tbl>
+                        <mdb-tbl sm>
                           <mdb-tbl-head>
                             <tr>
                               <th>{{ $t('flights.destination') }}</th>

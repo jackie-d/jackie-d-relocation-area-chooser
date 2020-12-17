@@ -26,7 +26,7 @@
                     <mdb-col class="scrollbar scrollbar-primary">
                         <p class="font-weight-bold">{{ $t('resume.flights') }}</p>
                         <p style="font-size: smaller;" class="grey-text">{{ $t('resume.flights_cost') }}</p>
-                        <mdb-tbl>
+                        <mdb-tbl sm>
                           <mdb-tbl-head>
                             <tr>
                               <th>{{ $t('flights.destination') }}</th>
@@ -88,7 +88,7 @@
                     <mdb-col class="scrollbar scrollbar-primary">
                       <p class="font-weight-bold">{{ $t('resume.flights') }}</p>
                         <p style="font-size: smaller;" class="grey-text">{{ $t('flights.flights_cost') }}</p>
-                        <mdb-tbl>
+                        <mdb-tbl sm>
                           <mdb-tbl-head>
                             <tr>
                               <th>{{ $t('flights.destination') }}</th>

@@ -69,7 +69,7 @@
   },
   "result": {
     "title": "The final destination of your choosing is:",
-    "next_step": "Move on to the review",
+    "next_step": "Save your result and get back to the home",
     "flights_cost": "Prices for your flight",
     "destination": "Destination",
     "price": "Cost",
@@ -81,6 +81,11 @@
     "chosen_for_flights": "Your choiche for the flights",
     "chosen_for_weather": "Your choiche for the weather",
     "chosen_for_both": "Your choiche for both the weather and the flights",
-    "congrats_name": "Very good choice {name}!!"
+    "congrats_name": "Very good choice {name}!!",
+    "back_to_history": "Get back to your history"
+  },
+  "history": {
+    "title": "Your past history for the relocation area",
+    "no_records": "History has no records at the current state."
   }
 }

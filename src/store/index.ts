@@ -33,6 +33,13 @@ const state = {
       'forecast': [],
       'flights': []
     }
+  ],
+  history: [
+    {
+      name: 'Jackie',
+      time: new Date(),
+      chosenCity: 0
+    }
   ]
 }
 
@@ -130,6 +137,11 @@ const mutations = {
   },
   CHOOSE_FINAL  (state, chosenCity) {
     state.finalChosenCity = chosenCity;
+  },
+  STORE_RESULT (state, result) {
+    const history = [...state.history];
+    history.push(result);
+    state.history = history;
   }
 }
 
