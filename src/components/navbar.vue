@@ -29,7 +29,7 @@
                         </mdb-dropdown-toggle>
                         <mdb-dropdown-menu>
                             <mdb-dropdown-item @click="isLanguageModalOpen = true">{{ $t('nav.language') }}</mdb-dropdown-item>
-                            <mdb-dropdown-item>{{ $t('nav.sounds') }}</mdb-dropdown-item>
+                            <mdb-dropdown-item :disabled="true" style="color: #aaa">{{ $t('nav.sounds') }}</mdb-dropdown-item>
                         </mdb-dropdown-menu>
                     </mdb-dropdown>
                 </mdb-navbar-nav>
