@@ -1,6 +1,6 @@
 <template>
     <mdb-navbar color="indigo" dark>
-        <mdb-navbar-brand href="https://mdbootstrap.com/">
+        <mdb-navbar-brand>
             Relocation Area Chooser
         </mdb-navbar-brand>
         <mdb-navbar-toggler>

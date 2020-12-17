@@ -139,6 +139,13 @@ const mutations = {
     const history = [...state.history];
     history.push(result);
     state.history = history;
+  },
+  INIT_PROCEDURE (state) {
+    state.name = undefined;
+    state.weatherChosenCity = undefined;
+    state.flightsChosenCity = undefined;
+    state.finalChosenCity = undefined;
+    console.log('test');
   }
 }
 

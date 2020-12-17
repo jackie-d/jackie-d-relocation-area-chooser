@@ -34,6 +34,8 @@ import mainFooter from '@/components/main-footer.vue';
 
 import router from '../router/index';
 
+import store from '../store';
+
 export default Vue.extend({
   name: 'Home',
   components: {
@@ -50,6 +52,9 @@ export default Vue.extend({
     goToHistory() {
       router.push('history')
     }
+  },
+  mounted: function() {
+    store.commit('INIT_PROCEDURE');
   }
 });
 </script>
