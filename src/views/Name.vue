@@ -12,7 +12,7 @@
             <mdb-col sm="6">
               <mdb-card testimonial>
                 <mdb-card-up gradient="rainy-ashville"></mdb-card-up>
-                <mdb-card-avatar color="white" class="mx-auto mt-4"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle"></mdb-card-avatar>
+                <mdb-card-avatar color="white" class="mx-auto mt-4"><img :src="require('@/assets/avatar.jpg')" class="rounded-circle"></mdb-card-avatar>
                 <mdb-card-body>
                   <mdb-card-title>{{ $t('name.your_name') }}</mdb-card-title>
                   <mdb-input 
