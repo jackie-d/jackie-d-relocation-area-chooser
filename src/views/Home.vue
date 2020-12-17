@@ -3,7 +3,7 @@
     <navbar />
     <mdb-container fluid style="height: 100%">
       <div class="home" style="margin: 0 -15px;">
-          <mdb-card class="card-image" :style="{ backgroundImage: 'url(' + require('@/assets/bg.jpg') + ')', backgroundPosition: 'right bottom', height: '90vh' }">
+          <mdb-card class="card-image" :style="{ backgroundImage: 'url(' + require('@/assets/bg.jpg') + ')', backgroundSize: 'cover', backgroundPosition: 'right bottom', height: '90vh' }">
             <div class="text-white text-center py-5 px-4 my-5">
               <div>
                 <h2 class="card-title h1-responsive pt-5 mb-5 font-weight-bold"><strong>{{ $t('dashboard.welcome') }}</strong></h2>
