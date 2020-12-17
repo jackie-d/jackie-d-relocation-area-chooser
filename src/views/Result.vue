@@ -141,8 +141,8 @@
           console.log('ERROR', err);
         });
         //
-        if ( this.$route.query.historyChosenCity && typeof this.$route.query.historyChosenCity == 'number' ) {
-          this.finalChosenCity = this.$route.query.historyChosenCity;
+        if ( this.$route.query.historyChosenCity && typeof this.$route.query.historyChosenCity == 'string' ) {
+          this.finalChosenCity = parseInt(this.$route.query.historyChosenCity);
           this.isFromHistory = true;
         }
     },

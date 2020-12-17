@@ -10,7 +10,7 @@ const state = {
   name: undefined,
   weatherChosenCity: undefined,
   flightsChosenCity: undefined,
-  finalChosenCity: (undefined  as unknown as number),
+  finalChosenCity: undefined as unknown as number,
   cities: [
     {
       'name': 'Amsterdam',
@@ -45,7 +45,7 @@ const actions = {
       if ( city.forecast.lenght > 0 ) {
         return;
       }
-      const accuWeatherForecastUrl = 'http://dataservice.accuweather.com/currentconditions/v1/' + city.accuweatherLocationId;
+      const accuWeatherForecastUrl = 'https://dataservice.accuweather.com/currentconditions/v1/' + city.accuweatherLocationId;
       var url = new URL(accuWeatherForecastUrl);
       url.searchParams.set('apikey', accuweatherApiKey);
       return axios.get( url.toString() )
