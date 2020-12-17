@@ -10,7 +10,12 @@
                 <p class="mx-5 mb-5">
                   {{ $t('dashboard.description') }}
                 </p>
-                <mdb-btn v-on:click="start" outline="white" size="lg" icon="globe">{{ $t('dashboard.start') }}</mdb-btn>
+                <div>
+                  <mdb-btn v-on:click="start" outline="white" size="lg" icon="globe">{{ $t('dashboard.start') }}</mdb-btn>
+                </div>
+                <div class="mt-5 mb-5">
+                  <mdb-btn v-on:click="goToHistory" outline="white" size="md" icon="caret-square-left">{{ $t('dashboard.history') }}</mdb-btn>
+                </div>
               </div>
             </div>
           </mdb-card>
@@ -41,6 +46,9 @@ export default Vue.extend({
   methods: {
     start: function() {
       router.push('name');
+    },
+    goToHistory() {
+      router.push('history')
     }
   }
 });
