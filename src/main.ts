@@ -7,8 +7,14 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import i18n from './i18n'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
+
+Vue.use(VueAxios, axios)
+
+require('dotenv').config()
 
 new Vue({
   router,

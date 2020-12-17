@@ -1,5 +1,7 @@
 {
   "common": {
+    "details": "Details",
+    "select": "Choose this",
     "close": "Close"
   },
   "dashboard": {
@@ -29,5 +31,16 @@
     "city_3_title": "Budapest",
     "city_3_desc": "<b>Title</b><br />Test",
     "start_selection": "Start your experience"
+  },
+  "weather": {
+    "title": "Have a look at the weather",
+    "desc": "Find out details and the best weather for your gladness. Select the one you prefer.",
+    "city_1_title": "Amsterdam",
+    "city_1_desc": "<b>Title</b><br />Test",
+    "city_2_title": "Madrid",
+    "city_2_desc": "<b>Title</b><br />Test",
+    "city_3_title": "Budapest",
+    "city_3_desc": "<b>Title</b><br />Test",
+    "next_step": "Get into the next step"
   }
 }

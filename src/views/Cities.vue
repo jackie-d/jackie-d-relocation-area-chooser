@@ -64,7 +64,7 @@
     name: 'Cities',
     methods: {
       goToNext: function() {
-        router.push('wheater');
+        router.push('weather');
       }
     },
     components: {
