@@ -10,7 +10,7 @@
       <mdb-col md="4" class="mt-2" v-for="(city, cityIndex) in cities" :key="city.name">
           <mdb-card :style="selectedCity == cityIndex ? 'box-shadow: 0 2px 5px 0 rgba(0,0,255,0.70), 0 2px 10px 0 rgba(0,0,255,0.70)' : ''">
             <mdb-card-image :src="require('@/assets/' + city.name.toLowerCase() + '.jpg')"></mdb-card-image>
-            <mdb-card-body>
+            <mdb-card-body style="padding-bottom: 36px;">
               <mdb-card-title>
                 {{ city.name }}
               </mdb-card-title>

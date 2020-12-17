@@ -1,5 +1,5 @@
 <template>
-    <mdb-footer color="blue" class="font-small pt-4">
+    <mdb-footer color="blue" class="font-small pt-4" style="margin-top: 0 !important;">
         <mdb-container class="text-left">
             <mdb-row>
             <mdb-col sm="6">

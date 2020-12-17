@@ -9,7 +9,7 @@
               <p class="mx-5 mb-5">
                 {{ $t('dashboard.description') }}
               </p>
-              <mdb-btn v-on:click="start" outline="white" size="md" icon="search-location">{{ $t('dashboard.start') }}</mdb-btn>
+              <mdb-btn v-on:click="start" outline="white" size="lg" icon="globe">{{ $t('dashboard.start') }}</mdb-btn>
             </div>
           </div>
         </mdb-card>
