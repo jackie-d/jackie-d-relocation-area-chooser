@@ -3,18 +3,18 @@
     <navbar />
     <mdb-container fluid style="height: 100%">
       <div class="home" style="margin: 0 -15px;">
-          <mdb-card class="card-image" :style="{ backgroundImage: 'url(' + require('@/assets/gradient1.jpg') + ')' }">
+          <mdb-card class="card-image" :style="{ backgroundImage: 'url(' + require('@/assets/bg.jpg') + ')', backgroundPosition: 'right bottom', height: '90vh' }">
             <div class="text-white text-center py-5 px-4 my-5">
               <div>
-                <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>{{ $t('dashboard.welcome') }}</strong></h2>
-                <p class="mx-5 mb-5">
+                <h2 class="card-title h1-responsive pt-5 mb-5 font-weight-bold"><strong>{{ $t('dashboard.welcome') }}</strong></h2>
+                <p class="mx-5 mb-5 font-weight-bold">
                   {{ $t('dashboard.description') }}
                 </p>
                 <div>
-                  <mdb-btn v-on:click="start" outline="white" size="lg" icon="globe">{{ $t('dashboard.start') }}</mdb-btn>
+                  <mdb-btn v-on:click="start" color="primary" size="lg" icon="globe">{{ $t('dashboard.start') }}</mdb-btn>
                 </div>
                 <div class="mt-5 mb-5">
-                  <mdb-btn v-on:click="goToHistory" outline="white" size="md" icon="caret-square-left">{{ $t('dashboard.history') }}</mdb-btn>
+                  <mdb-btn v-on:click="goToHistory" color="primary" size="md" icon="caret-square-left">{{ $t('dashboard.history') }}</mdb-btn>
                 </div>
               </div>
             </div>
