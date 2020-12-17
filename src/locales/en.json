@@ -2,7 +2,8 @@
   "common": {
     "details": "Details",
     "select": "Choose this",
-    "close": "Close"
+    "close": "Close",
+    "hello_name": "Hello, {name}!"
   },
   "dashboard": {
     "welcome": "Welcome to Relocation Area Chooser",

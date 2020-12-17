@@ -5,6 +5,7 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 const state = {
+  name: undefined,
   cities: [
     {
       'name': 'Amsterdam',
@@ -53,7 +54,9 @@ const mutations = {
     const cities = [...state.cities];
     cities[payload.cityIndex].forecast = payload.forecast;
     state.cities = cities;
-    console.log('c', state);
+  },
+  SET_NAME(state, name) {
+    state.name = name;
   }
 }
 

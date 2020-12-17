@@ -18,7 +18,7 @@
                   v-model="name" 
                 />
                 <hr/>
-                <mdb-btn color="primary" v-on:click="goToCities">
+                <mdb-btn color="primary" v-on:click="goToCities" :disabled="name == undefined || name == ''">
                   <mdb-icon icon="eye" />
                   Let's find the city
                 </mdb-btn>
@@ -50,6 +50,7 @@ import { mdbModal, mdbModalHeader, mdbModalTitle, mdbModalBody, mdbModalFooter, 
 import navbar from '@/components/navbar.vue';
 import mainFooter from '@/components/main-footer.vue';
 import router from '../router'
+import store from '../store';
 
 export default Vue.extend({
   name: 'Home',
@@ -62,6 +63,7 @@ export default Vue.extend({
   methods: {
     goToCities: function() {
         if ( this.name && this.name != '' ) {
+          store.commit('SET_NAME', this.name);
           router.push('/cities');
         } else {
           this.modal = true;

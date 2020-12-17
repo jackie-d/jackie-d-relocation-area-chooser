@@ -45,6 +45,9 @@
                     </mdb-dropdown-menu>
                 </mdb-dropdown>
             </mdb-navbar-nav>
+            <span class="navbar-text" v-if="name !== undefined">
+                {{ $t('common.hello_name', {name: name}) }}
+            </span>
         </mdb-navbar-toggler>
     </mdb-navbar>
 </template>
@@ -52,6 +55,7 @@
 <script lang="ts">
 
 import Vue from 'vue';
+import store from '../store';
 
 import { mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem, mdbDropdown, mdbDropdownToggle, mdbDropdownMenu, mdbDropdownItem, mdbIcon } from 'mdbvue';
 
@@ -59,7 +63,8 @@ export default Vue.extend({
     props: ['showMenu'],
     data: function () {
         return {
-            isMenuShown: this.showMenu ? this.showMenu: true
+            isMenuShown: this.showMenu ? this.showMenu: true,
+            name: store.state.name
         }
     },
     components: {
