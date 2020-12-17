@@ -99,7 +99,6 @@ const actions = {
           time: moment(flight.local_departure).format('DD MMM HH:mm'),
           duration: moment(flight.duration.total * 1000).format('HH:mm')
         }));
-        console.log(flights);
         commit('SET_FLIGHTS', {cityIndex, flights})
       })
       .catch(error => {
@@ -133,10 +132,8 @@ const mutations = {
     state.finalChosenCity = chosenCity;
   },
   STORE_RESULT (state, result) {
-    console.log(result);
     const history = [...state.history];
     history.push(result);
-    console.log(history);
     state.history = history;
   }
 }

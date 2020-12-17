@@ -4,7 +4,7 @@
   <mdb-container fluid style="height: 100%">
 
     <section class="text-center">
-      <h2 class="h1 pt-4">{{ $t('result.title') }} {{historyChosenCity}}</h2>
+      <h2 class="h1 pt-4">{{ $t('result.title') }}</h2>
     </section>
 
     <mdb-row>
@@ -107,14 +107,16 @@
     },
     methods: {
       goToHome: function() {
-        if ( !this.isFromHistory ) {
-          store.commit('STORE_RESULT', {
+        if ( this.isFromHistory ) {
+          router.push('/history');
+          return;
+        }
+        store.commit('STORE_RESULT', {
             chosenCity: this.finalChosenCity,
             time: new Date(),
             name: this.name
           });
-        }
-        router.push('/');
+          router.push('/');
       }
     },
     mounted: function() {
@@ -122,7 +124,7 @@
           this.$store.dispatch('initFlights'),
           this.$store.dispatch('initWeather')
         ]).then(() => {
-          console.log('Flights init');
+          // console.log('Flights init');
         });
         //
         if ( this.$route.query.historyChosenCity ) {

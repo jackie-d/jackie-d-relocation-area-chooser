@@ -183,7 +183,7 @@
           this.$store.dispatch('initFlights'),
           this.$store.dispatch('initWeather')
         ]).then(() => {
-          console.log('Flights init');
+          // console.log('Flights init');
         });
     },
     components: {

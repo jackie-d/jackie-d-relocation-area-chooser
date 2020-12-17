@@ -107,7 +107,7 @@
     mounted: function() {
       this.$store.dispatch('initFlights')
         .then(() => {
-          console.log('flights init');
+          // console.log('flights init');
         });
     },
     components: {

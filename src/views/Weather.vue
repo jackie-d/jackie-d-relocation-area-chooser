@@ -79,7 +79,7 @@
     mounted: function() {
       this.$store.dispatch('initWeather')
         .then(() => {
-          console.log('weather init');
+          // console.log('Weather init');
         });
     },
     components: {
