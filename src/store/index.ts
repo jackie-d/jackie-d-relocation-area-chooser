@@ -93,12 +93,16 @@ const actions = {
       axios.get( url.toString(), axiosConfig )
       .then(response => {
         const apiData = response.data.data;
-        const flights = apiData.map(flight => ({
-          to: flight.cityTo+', '+flight.countryTo.name,
-          price: flight.price,
-          time: moment(flight.local_departure).format('DD MMM HH:mm'),
-          duration: moment(flight.duration.total * 1000).format('HH:mm')
-        }));
+        console.log(apiData);
+        const flights = apiData.map(flight => {
+          const airlines = flight.airlines.join(', ');
+          return {
+            to: flight.cityTo+', '+flight.countryTo.name+' ('+airlines+')',
+            price: flight.price,
+            time: moment(flight.local_departure).format('DD MMM HH:mm'),
+            duration: moment(flight.duration.total * 1000).format('HH:mm')
+          };
+        });
         commit('SET_FLIGHTS', {cityIndex, flights})
       })
       .catch(error => {
