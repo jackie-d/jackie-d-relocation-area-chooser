@@ -39,7 +39,7 @@
                           </tr>
                         </mdb-tbl-body>
                       </mdb-tbl>
-                      <div class="spinner-border text-light mt-4" role="status" v-if="!(city.flights && city.flights.lengths > 0)">
+                      <div class="spinner-border text-light mt-4" role="status" v-if="!(city.flights && city.flights.length > 0)">
                         <span class="sr-only">Loading...</span>
                       </div>
                   </mdb-col>

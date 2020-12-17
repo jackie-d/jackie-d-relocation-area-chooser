@@ -66,5 +66,21 @@
     "chosen_for_flights": "Your choiche for the flights",
     "chosen_for_weather": "Your choiche for the weather",
     "chosen_for_both": "Your choiche for both the weather and the flights"
+  },
+  "result": {
+    "title": "The final destination of your choosing is:",
+    "next_step": "Move on to the review",
+    "flights_cost": "Prices for your flight",
+    "destination": "Destination",
+    "price": "Cost",
+    "time": "Start at",
+    "duration": "Duration time",
+    "weather": "Weather review",
+    "current_weather": "The weather forecast",
+    "flights": "Flights Review",
+    "chosen_for_flights": "Your choiche for the flights",
+    "chosen_for_weather": "Your choiche for the weather",
+    "chosen_for_both": "Your choiche for both the weather and the flights",
+    "congrats_name": "Very good choice {name}!!"
   }
 }

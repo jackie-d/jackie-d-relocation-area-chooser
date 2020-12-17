@@ -43,7 +43,7 @@
                           </tr>
                         </mdb-tbl-body>
                       </mdb-tbl>
-                      <div class="spinner-border text-light mt-4" role="status" v-if="!(cities[weatherChosenCity].flights && cities[weatherChosenCity].flights.lengths > 0)">
+                      <div class="spinner-border text-light mt-4" role="status" v-if="!(cities[weatherChosenCity].flights && cities[weatherChosenCity].flights.length > 0)">
                         <span class="sr-only">Loading...</span>
                       </div>
                   </mdb-col>
@@ -105,7 +105,7 @@
                           </tr>
                         </mdb-tbl-body>
                       </mdb-tbl>
-                      <div class="spinner-border text-light mt-4" role="status" v-if="!(cities[flightsChosenCity].flights && cities[flightsChosenCity].flights.lengths > 0)">
+                      <div class="spinner-border text-light mt-4" role="status" v-if="!(cities[flightsChosenCity].flights && cities[flightsChosenCity].flights.length > 0)">
                         <span class="sr-only">Loading...</span>
                       </div>
                   </mdb-col>

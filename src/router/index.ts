@@ -79,6 +79,7 @@ router.beforeEach((to, from, next) => {
   const name = store.state.name;
   const weatherChosenCity = store.state.weatherChosenCity;
   const flightsChosenCity = store.state.flightsChosenCity;
+  const finalChosenCity = store.state.finalChosenCity;
   if ( 
     (
       (name == undefined || name === '') 
@@ -111,6 +112,14 @@ router.beforeEach((to, from, next) => {
       (
         to.path == '/resume' || 
         to.path == '/result'
+      )
+      ||
+      (
+        (finalChosenCity == undefined) 
+        &&
+        (
+          to.path == '/result'
+        )
       )
     )
   ) {
