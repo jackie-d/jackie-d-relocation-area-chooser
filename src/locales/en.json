@@ -54,6 +54,11 @@
     "city_2_desc": "<b>Title</b><br />Description",
     "city_3_title": "Budapest",
     "city_3_desc": "<b>Title</b><br />Description",
-    "next_step": "Get into the next step"
+    "next_step": "Get into the next step",
+    "flights_cost": "Prices for your flight",
+    "destination": "Destination",
+    "price": "Cost",
+    "time": "Start at",
+    "duration": "Duration time"
   }
 }

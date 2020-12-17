@@ -16,12 +16,31 @@
             <mdb-card-body>
               <mdb-card-title>
                 {{ city.name }}
-              </mdb-card-title>
+              </mdb-card-title>  
               <mdb-card-text>
-                <p style="font-size: smaller;" class="grey-text">{{ $t('flights.current_weather') }}</p>
-                <img v-if="city.forecast" :src="city.forecast.iconUrl" />
-                <p class="mt-2 font-italic">{{ (city.forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (city.forecast || {}).temperature || '... °C' }}</span></p>
-                <p v-html="$t('weather.city_1_desc')"></p>
+                <mdb-row>
+                  <mdb-col class="scrollbar scrollbar-primary">
+                      <p style="font-size: smaller;" class="grey-text">{{ $t('flights.flights_cost') }}</p>
+                      <mdb-tbl>
+                        <mdb-tbl-head>
+                          <tr>
+                            <th>{{ $t('flights.destination') }}</th>
+                            <th>{{ $t('flights.price') }}</th>
+                            <th>{{ $t('flights.time') }}</th>
+                            <th>{{ $t('flights.duration') }}</th>
+                          </tr>
+                        </mdb-tbl-head>
+                        <mdb-tbl-body v-for="flight in city.flights" :key="flight.to">
+                          <tr>
+                            <th class="font-weight-bold">{{ flight.to }}</th>
+                            <td>{{ flight.price }} €</td>
+                            <td>{{ flight.time }}</td>
+                            <td>{{ flight.duration }}</td>
+                          </tr>
+                        </mdb-tbl-body>
+                      </mdb-tbl>
+                  </mdb-col>
+                </mdb-row>
               </mdb-card-text>
               <mdb-btn color="info">
                 <mdb-icon fas icon="question" />
@@ -52,7 +71,7 @@
   import VueAxios from 'vue-axios';
 
   import navbar from '@/components/navbar.vue';
-  import { mdbCardImage, mdbCardText, mdbModal, mdbModalHeader, mdbModalTitle, mdbModalBody, mdbModalFooter, mdbContainer, mdbCard, mdbBtn, mdbRow, mdbCol, mdbCardUp, mdbCardAvatar, mdbCardBody, mdbCardTitle, mdbIcon, mdbInput } from 'mdbvue';
+  import { mdbCardImage, mdbCardText, mdbModal, mdbModalHeader, mdbModalTitle, mdbModalBody, mdbModalFooter, mdbContainer, mdbCard, mdbBtn, mdbRow, mdbCol, mdbCardUp, mdbCardAvatar, mdbCardBody, mdbCardTitle, mdbIcon, mdbInput, mdbTbl, mdbTblBody, mdbTblHead } from 'mdbvue';
   import router from '../router';
 
   import store from '../store';
@@ -102,7 +121,38 @@
       mdbModalBody, 
       mdbModalFooter,
       mdbCardImage,
-      mdbCardText
+      mdbCardText,
+      mdbTbl,
+      mdbTblBody,
+      mdbTblHead
     },
   });
 </script>
+
+<style scoped>
+
+  .force-overflow {
+    min-height: 450px;
+  }
+
+  .scrollbar {
+    float: left;
+    height: 300px;
+    width: 150px;
+    background: #fff;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+  }
+
+  .scrollbar-primary::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+  }
+
+  .scrollbar-primary::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #4285F4;
+  }
+
+</style>
