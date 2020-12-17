@@ -57,6 +57,9 @@ const mutations = {
   },
   SET_NAME(state, name) {
     state.name = name;
+  },
+  CHOOSE_WEATHER(state, chosenCity) {
+    state.chosenCity = chosenCity;
   }
 }
 

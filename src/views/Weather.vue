@@ -67,7 +67,8 @@
     },
     methods: {
       goToNext: function() {
-        router.push('wheater');
+        store.commit('CHOOSE_WEATHER', this.selectedCity);
+        router.push('flights');
       },
       select: function(cityIndex) {
         this.selectedCity = cityIndex;
