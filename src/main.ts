@@ -10,6 +10,8 @@ import i18n from './i18n'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+import { Notify } from 'mdbvue';
+
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)

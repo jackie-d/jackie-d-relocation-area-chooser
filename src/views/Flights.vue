@@ -39,11 +39,14 @@
                           </tr>
                         </mdb-tbl-body>
                       </mdb-tbl>
+                      <div class="spinner-border text-light mt-4" role="status" v-if="!(city.flights && city.flights.lengths > 0)">
+                        <span class="sr-only">Loading...</span>
+                      </div>
                   </mdb-col>
                 </mdb-row>
               </mdb-card-text>
               <mdb-btn color="info">
-                <mdb-icon fas icon="question" />
+                <mdb-icon fas icon="question" @click="openDetails"/>
                 {{ $t('common.details') }}
               </mdb-btn>
               <mdb-btn color="primary" v-on:click="select(cityIndex)">
@@ -94,6 +97,9 @@
       },
       select: function(cityIndex) {
         this.chosenCity = cityIndex;
+      },
+      openDetails: function() {
+        
       }
     },
     mounted: function() {
