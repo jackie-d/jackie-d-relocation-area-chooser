@@ -48,7 +48,7 @@ const actions = {
       const accuWeatherForecastUrl = 'http://dataservice.accuweather.com/currentconditions/v1/' + city.accuweatherLocationId;
       var url = new URL(accuWeatherForecastUrl);
       url.searchParams.set('apikey', accuweatherApiKey);
-      axios.get( url.toString() )
+      return axios.get( url.toString() )
       .then(response => {
         const apiData = response.data[0];
         const forecast = {
@@ -59,8 +59,8 @@ const actions = {
         commit('SET_FORECAST', {cityIndex, forecast})
       })
       .catch(error => {
-        alert('Error: API over server limit');
         console.log(error);
+        throw error;
       })
     }
   },

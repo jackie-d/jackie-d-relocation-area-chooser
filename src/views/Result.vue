@@ -20,8 +20,17 @@
             <mdb-card-body>
               <p class="font-weight-bold">{{ $t('result.weather') }}</p>
               <p style="font-size: smaller;" class="grey-text">{{ $t('result.current_weather') }}</p>
-              <img v-if="cities[finalChosenCity].forecast" :src="cities[finalChosenCity].iconUrl" />
-              <p class="mt-2 font-italic">{{ (cities[finalChosenCity].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[finalChosenCity].forecast || {}).temperature || '... °C' }}</span></p>
+              <div v-if="cities[finalChosenCity].forecast.length > 0">
+                <img v-if="cities[finalChosenCity].forecast" :src="cities[finalChosenCity].forecast.iconUrl" />
+                <p class="mt-2 font-italic">{{ (cities[finalChosenCity].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[finalChosenCity].forecast || {}).temperature || '... °C' }}</span></p>
+              </div>
+              <div v-if="cities[finalChosenCity].forecast.length == 0">
+                <div v-if="!accuweatherError" class="spinner-border text-light mt-4" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <p v-if="!accuweatherError" class="text-small text-grey font-italic">{{ $t('common.loading') }}</p>
+                <p v-if="accuweatherError" class="text-small text-grey font-italic">{{ $t('common.error_aw') }}</p>
+              </div>
             </mdb-card-body>
           </mdb-card>
 
@@ -102,7 +111,8 @@
         cities: store.state.cities, 
         finalChosenCity: store.state.finalChosenCity,
         name: store.state.name,
-        isFromHistory: false
+        isFromHistory: false,
+        accuweatherError: false
       }
     },
     methods: {
@@ -125,6 +135,10 @@
           this.$store.dispatch('initWeather')
         ]).then(() => {
           // console.log('Flights init');
+        })
+        .catch(err => {
+          this.accuweatherError = true;
+          console.log('ERROR', err);
         });
         //
         if ( this.$route.query.historyChosenCity ) {

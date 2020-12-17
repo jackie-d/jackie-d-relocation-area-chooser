@@ -20,8 +20,17 @@
                   <h5 v-if="weatherChosenCity == flightsChosenCity">{{ $t('resume.chosen_for_both') }}</h5>
                   <p class="font-weight-bold">{{ $t('resume.weather') }}</p>
                   <p style="font-size: smaller;" class="grey-text">{{ $t('resume.current_weather') }}</p>
-                  <img v-if="cities[weatherChosenCity].forecast" :src="cities[weatherChosenCity].iconUrl" />
-                  <p class="mt-2 font-italic">{{ (cities[weatherChosenCity].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[weatherChosenCity].forecast || {}).temperature || '... °C' }}</span></p>
+                  <div v-if="cities[weatherChosenCity].forecast.length > 0">
+                    <img v-if="cities[weatherChosenCity].forecast" :src="cities[weatherChosenCity].iconUrl" />
+                    <p class="mt-2 font-italic">{{ (cities[weatherChosenCity].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[weatherChosenCity].forecast || {}).temperature || '... °C' }}</span></p>
+                  </div>
+                  <div v-if="cities[weatherChosenCity].forecast.length == 0">
+                    <div v-if="!accuweatherError" class="spinner-border text-light mt-4" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                    <p v-if="!accuweatherError" class="text-small text-grey font-italic">{{ $t('common.loading') }}</p>
+                    <p v-if="accuweatherError" class="text-small text-grey font-italic">{{ $t('common.error_aw') }}</p>
+                  </div>
                   <mdb-row class="mt-4">
                     <mdb-col class="scrollbar scrollbar-primary">
                         <p class="font-weight-bold">{{ $t('resume.flights') }}</p>
@@ -82,8 +91,17 @@
                   <h5>{{ $t('resume.chosen_for_flights') }}</h5>
                   <p class="font-weight-bold">{{ $t('resume.weather') }}</p>
                   <p style="font-size: smaller;" class="grey-text">{{ $t('resume.current_weather') }}</p>
-                  <img v-if="cities[flightsChosenCity].forecast" :src="cities[flightsChosenCity].forecast.iconUrl" />
-                  <p class="mt-2 font-italic">{{ (cities[flightsChosenCity].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[flightsChosenCity].forecast || {}).temperature || '... °C' }}</span></p>
+                    <div v-if="cities[flightsChosenCity].forecast.length > 0">
+                    <img v-if="cities[flightsChosenCity].forecast" :src="cities[flightsChosenCity].forecast.iconUrl" />
+                    <p class="mt-2 font-italic">{{ (cities[flightsChosenCity].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[flightsChosenCity].forecast || {}).temperature || '... °C' }}</span></p>
+                  </div>
+                  <div v-if="cities[flightsChosenCity].forecast.length == 0">
+                    <div v-if="!accuweatherError" class="spinner-border text-light mt-4" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                    <p v-if="!accuweatherError" class="text-small text-grey font-italic">{{ $t('common.loading') }}</p>
+                    <p v-if="accuweatherError" class="text-small text-grey font-italic">{{ $t('common.error_aw') }}</p>
+                  </div>
                   <mdb-row class="mt-4">
                     <mdb-col class="scrollbar scrollbar-primary">
                       <p class="font-weight-bold">{{ $t('resume.flights') }}</p>
@@ -162,6 +180,7 @@
         chosenCity: undefined,
         weatherChosenCity: store.state.weatherChosenCity,
         flightsChosenCity: store.state.flightsChosenCity,
+        accuweatherError: false
       }
     },
     methods: {
@@ -184,6 +203,9 @@
           this.$store.dispatch('initWeather')
         ]).then(() => {
           // console.log('Flights init');
+        }).catch(err => {
+          this.accuweatherError = true;
+          console.log('ERROR', err);
         });
     },
     components: {

@@ -16,10 +16,18 @@
                   {{ city.name }}
                 </mdb-card-title>
                 <mdb-card-text>
-                  <p style="font-size: smaller;" class="grey-text">{{ $t('weather.current_weather') }}</p>
-                  <img v-if="city.forecast" :src="city.forecast.iconUrl" />
-                  <p class="mt-2 font-italic">{{ (city.forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (city.forecast || {}).temperature || '... °C' }}</span></p>
-                  <p v-html="$t('common.city_1_desc')"></p>
+                  <div v-if="city.forecast.length > 0">
+                    <p style="font-size: smaller;" class="grey-text">{{ $t('weather.current_weather') }}</p>
+                    <img v-if="city.forecast" :src="city.forecast.iconUrl" />
+                    <p class="mt-2 font-italic">{{ (city.forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (city.forecast || {}).temperature || '... °C' }}</span></p>
+                  </div>
+                  <div v-if="city.forecast.length == 0">
+                    <div v-if="!accuweatherError" class="spinner-border text-light mt-4" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                    <p v-if="!accuweatherError" class="text-small text-grey font-italic">{{ $t('common.loading') }}</p>
+                    <p v-if="accuweatherError" class="text-small text-grey font-italic">{{ $t('common.error_aw') }}</p>
+                  </div>
                 </mdb-card-text>
                 <mdb-btn color="info" :disabled="true">
                   <mdb-icon fas icon="question" />
@@ -64,7 +72,8 @@
     data: function() {
       return {
         cities: store.state.cities, 
-        selectedCity: undefined
+        selectedCity: undefined,
+        accuweatherError: false
       }
     },
     methods: {
@@ -80,6 +89,10 @@
       this.$store.dispatch('initWeather')
         .then(() => {
           // console.log('Weather init');
+        })
+        .catch(err => {
+          this.accuweatherError = true;
+          console.log('ERROR', err);
         });
     },
     components: {

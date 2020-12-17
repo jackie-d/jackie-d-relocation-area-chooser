@@ -11,7 +11,9 @@
     "city_2_title": "Madrid",
     "city_2_desc": "<b>Title</b><br />Description",
     "city_3_title": "Budapest",
-    "city_3_desc": "<b>Title</b><br />Description"
+    "city_3_desc": "<b>Title</b><br />Description",
+    "loading": "Loading",
+    "error_aw": "Error: API over server limit"
   },
   "dashboard": {
     "welcome": "Welcome to Relocation Area Chooser",
