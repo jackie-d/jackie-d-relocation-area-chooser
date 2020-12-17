@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navbar v-bind:showMenu="false" />
+    <navbar />
     <mdb-container fluid style="height: 100%">
       <section class="text-center">
         <h4 class="pt-4">{{ $t('history.title') }}</h4>
