@@ -164,8 +164,8 @@
     },
     methods: {
       goToNext: function() {
-
-        router.push('flights');
+        store.commit('CHOOSE_FINAL', this.chosenCity);
+        router.push('/result');
       },
       select: function(cityIndex) {
         this.chosenCity = cityIndex;
@@ -177,7 +177,12 @@
           this.chosenCity = this.weatherChosenCity;
         }
         //
-
+        Promise.all([
+          this.$store.dispatch('initFlights'),
+          this.$store.dispatch('initWeather')
+        ]).then(() => {
+          console.log('Flights init');
+        });
     },
     components: {
       mdbContainer,

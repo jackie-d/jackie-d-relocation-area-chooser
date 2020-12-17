@@ -10,6 +10,7 @@ const state = {
   name: undefined,
   weatherChosenCity: undefined,
   flightsChosenCity: undefined,
+  finalChosenCity: undefined,
   cities: [
     {
       'name': 'Amsterdam',
@@ -40,6 +41,9 @@ const actions = {
     const accuweatherApiKey = process.env.VUE_APP_ACCUWEATHER_API_KEY || '';
     for( let cityIndex in state.cities ) {
       const city = state.cities[cityIndex];
+      if ( city.forecast.lenght > 0 ) {
+        return;
+      }
       const accuWeatherForecastUrl = 'http://dataservice.accuweather.com/currentconditions/v1/' + city.accuweatherLocationId;
       var url = new URL(accuWeatherForecastUrl);
       url.searchParams.set('apikey', accuweatherApiKey);
@@ -61,9 +65,11 @@ const actions = {
   },
   initFlights({ commit, state }) {
     const tequilaApiKey = process.env.VUE_APP_TEQUILA_API_KEY || '';
-    console.log('A', tequilaApiKey);
     for( let cityIndex in state.cities ) {
       const city = state.cities[cityIndex];
+      if ( city.flights.lenght > 0 ) {
+        return;
+      }
       const tequilaApi = 'https://tequila-api.kiwi.com/v2/search';
       const url = new URL(tequilaApi);
       const dateFormatPattern = 'DD/MM/YYYY';
@@ -121,6 +127,9 @@ const mutations = {
   },
   CHOOSE_FLIGHTS(state, chosenCity) {
     state.flightsChosenCity = chosenCity;
+  },
+  CHOOSE_FINAL  (state, chosenCity) {
+    state.finalChosenCity = chosenCity;
   }
 }
 
