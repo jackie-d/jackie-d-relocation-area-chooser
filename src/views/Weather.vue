@@ -15,14 +15,17 @@
                 {{ city.name }}
               </mdb-card-title>
               <mdb-card-text>
+                <p style="font-size: smaller;" class="grey-text">{{ $t('weather.current_weather') }}</p>
                 <img v-if="city.forecast" :src="city.forecast.iconUrl" />
                 <p class="mt-2 font-italic">{{ (city.forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (city.forecast || {}).temperature || '... °C' }}</span></p>
                 <p v-html="$t('weather.city_1_desc')"></p>
               </mdb-card-text>
               <mdb-btn color="info">
+                <mdb-icon fas icon="question" />
                 {{ $t('common.details') }}
               </mdb-btn>
               <mdb-btn color="primary" v-on:click="select(cityIndex)">
+                <mdb-icon fas icon="check-square" />
                 {{ $t('common.select') }}
               </mdb-btn>
               <div class="custom-control custom-checkbox custom-control-inline" style="position: absolute; bottom: 8px; right: -4px; z-index: 999;">

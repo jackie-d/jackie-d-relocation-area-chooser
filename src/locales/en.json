@@ -41,6 +41,7 @@
     "city_2_desc": "<b>Title</b><br />Test",
     "city_3_title": "Budapest",
     "city_3_desc": "<b>Title</b><br />Test",
-    "next_step": "Get into the next step"
+    "next_step": "Get into the next step",
+    "current_weather": "The current state is:"
   }
 }
