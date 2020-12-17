@@ -5,35 +5,21 @@
         </mdb-navbar-brand>
         <mdb-navbar-toggler>
             <mdb-navbar-nav>
-                <router-link 
-                    to="/"
-                    v-slot="{ href, route, navigate, isActive }"
-                >
-                    <mdb-nav-item :href="href" :active="isActive">
+                    <mdb-nav-item :to="{'path': '/'}" active>
                         <mdb-icon icon="home" />
                         Home
                     </mdb-nav-item>
-                </router-link>
-                <router-link 
-                    to="/name"
-                    v-slot="{ href, route, navigate, isActive }"
-                     v-if="isMenuShown"
-                >
-                    <mdb-nav-item :href="href" :active="isActive">
+                    
+                    <mdb-nav-item :to="{'path': '/name'}" active>
                         <mdb-icon icon="archway" />
                         Find your area
                     </mdb-nav-item>
-                </router-link>
-                <router-link 
-                    to="/history"
-                    v-slot="{ href, route, navigate, isActive }"
-                    v-if="isMenuShown"
-                >
-                    <mdb-nav-item :href="href" :active="isActive">
+
+                    <mdb-nav-item :to="{'path': '/history'}" active>
                         <mdb-icon icon="history" />
                         Your searches
                     </mdb-nav-item>
-                </router-link>
+
                 <mdb-dropdown tag="li" class="nav-item" slot="">
                     <mdb-dropdown-toggle tag="a" navLink color="indigo" slot="toggle" waves-fixed>
                         <mdb-icon icon="cog" />

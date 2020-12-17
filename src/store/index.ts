@@ -34,13 +34,7 @@ const state = {
       'flights': []
     }
   ],
-  history: [
-    {
-      name: 'Jackie',
-      time: new Date(),
-      chosenCity: 0
-    }
-  ]
+  history: []
 }
 
 const actions = {
@@ -139,8 +133,10 @@ const mutations = {
     state.finalChosenCity = chosenCity;
   },
   STORE_RESULT (state, result) {
+    console.log(result);
     const history = [...state.history];
     history.push(result);
+    console.log(history);
     state.history = history;
   }
 }
