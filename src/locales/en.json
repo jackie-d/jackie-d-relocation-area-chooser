@@ -15,6 +15,15 @@
     "loading": "Loading",
     "error_aw": "Error: API over server limit"
   },
+  "nav": {
+    "home": "Home",
+    "find_your_area": "Find your area",
+    "your_searches": "Your searches",
+    "settings": "Settings",
+    "language": "Language",
+    "sounds": "Sounds",
+    "change_language": "Change Language"
+  },
   "dashboard": {
     "welcome": "Welcome to Relocation Area Chooser",
     "description": "We want to help you find the right place for you! Start now and select your preferred destination with ease.",

@@ -1,0 +1,103 @@
+{
+    "common": {
+        "details": "Einzelheiten",
+        "select": "Wählen Sie dies",
+        "close": "Schließen",
+        "hello_name": "Hallo, {name}!",
+        "weather_details": "Wetterdetails",
+        "forecast_details": "Prognosedetails",
+        "city_1_title": "Amsterdam",
+        "city_1_desc": "<b> Titel </b> <br /> Beschreibung",
+        "city_2_title": "Madrid",
+        "city_2_desc": "<b> Titel </b> <br /> Beschreibung",
+        "city_3_title": "Budapest",
+        "city_3_desc": "<b> Titel </b> <br /> Beschreibung",
+        "loading": "Wird geladen",
+        "error_aw": "Fehler: API über Serverlimit"
+    },
+    "nav": {
+        "home": "Zuhause",
+        "find_your_area": "Finden Sie Ihre Region",
+        "your_searches": "Ihre Suche",
+        "settings": "Die Einstellungen",
+        "language": "Sprache",
+        "sounds": "Geräusche",
+        "change_language": "Sprache ändern"
+    },
+    "dashboard": {
+        "welcome": "Willkommen bei Relocation Area Chooser",
+        "description": "Wir möchten Ihnen helfen, den richtigen Ort für Sie zu finden! Starten Sie jetzt und wählen Sie ganz einfach Ihr bevorzugtes Ziel aus.",
+        "start": "Starten Sie die Erkundung!",
+        "history": "Oder werfen Sie einen Blick auf Ihre Geschichte"
+    },
+    "footer": {
+        "title": "Finden Sie den richtigen Ort für Sie",
+        "description": "Dank Relocation Area Chooser können Sie jetzt die beste Stadt finden. Folgen Sie einfach dem Verfahren und finden Sie sie jetzt!"
+    },
+    "name": {
+        "title": "Wie heißen Sie?",
+        "desc": "Beginnen wir unsere Reise, um ein gutes Ziel für Sie zu finden",
+        "your_name": "Dein Name:",
+        "name_placeholder": "Schreibe hier deinen Namen hin",
+        "invalid_name_title": "Geben Sie Ihren Namen ein",
+        "invalid_name_desc": "Bitte notieren Sie sich Ihren Namen, um zum nächsten Schritt zu gelangen"
+    },
+    "cities": {
+        "title": "Vorgeschlagene Städte",
+        "desc": "Ein kurzer Blick auf die besten Gebiete für Ihren Umzug",
+        "start_selection": "Beginnen Sie Ihre Erfahrung"
+    },
+    "weather": {
+        "title": "Schauen Sie sich das Wetter an",
+        "desc": "Finden Sie Details und das beste Wetter für Ihre Freude heraus. Wählen Sie die gewünschte aus.",
+        "next_step": "Gehen Sie in den nächsten Schritt",
+        "current_weather": "Der aktuelle Status ist:"
+    },
+    "flights": {
+        "title": "Finden Sie die beste Verbindung zu Ihrer Stadt",
+        "desc": "Schauen Sie sich die Flughäfen und Flüge in der Nähe an und sehen Sie sich die besten an",
+        "next_step": "Gehen Sie in den nächsten Schritt",
+        "flights_cost": "Preise für Ihren Flug",
+        "destination": "Ziel",
+        "price": "Kosten",
+        "time": "Anfangen bei",
+        "duration": "Laufzeit"
+    },
+    "resume": {
+        "title": "Werfen Sie einen neuen Blick auf Ihre Wahl",
+        "desc": "Kam zu Ihrem endgültigen Ziel",
+        "next_step": "Fahren Sie mit der Überprüfung fort",
+        "flights_cost": "Preise für Ihren Flug",
+        "destination": "Ziel",
+        "price": "Kosten",
+        "time": "Anfangen bei",
+        "duration": "Laufzeit",
+        "weather": "Wetterbericht",
+        "current_weather": "Der Wetterbericht",
+        "flights": "Flüge Bewertung",
+        "chosen_for_flights": "Ihre Auswahl für die Flüge",
+        "chosen_for_weather": "Ihre Wahl für das Wetter",
+        "chosen_for_both": "Ihre Wahl sowohl für das Wetter als auch für die Flüge"
+    },
+    "result": {
+        "title": "Das endgültige Ziel Ihrer Wahl ist:",
+        "next_step": "Speichern Sie Ihr Ergebnis und kehren Sie nach Hause zurück",
+        "flights_cost": "Preise für Ihren Flug",
+        "destination": "Ziel",
+        "price": "Kosten",
+        "time": "Anfangen bei",
+        "duration": "Laufzeit",
+        "weather": "Wetterbericht",
+        "current_weather": "Der Wetterbericht",
+        "flights": "Flüge Bewertung",
+        "chosen_for_flights": "Ihre Auswahl für die Flüge",
+        "chosen_for_weather": "Ihre Wahl für das Wetter",
+        "chosen_for_both": "Ihre Wahl sowohl für das Wetter als auch für die Flüge",
+        "congrats_name": "Sehr gute Wahl {name} !!",
+        "back_to_history": "Kehren Sie zu Ihrer Geschichte zurück"
+    },
+    "history": {
+        "title": "Ihre Vergangenheit für den Umzugsbereich",
+        "no_records": "Der Verlauf enthält derzeit keine Aufzeichnungen."
+    }
+}

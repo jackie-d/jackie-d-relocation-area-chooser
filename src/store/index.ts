@@ -144,7 +144,6 @@ const mutations = {
     state.weatherChosenCity = undefined;
     state.flightsChosenCity = undefined;
     state.finalChosenCity = undefined;
-    console.log('test');
   }
 }
 
