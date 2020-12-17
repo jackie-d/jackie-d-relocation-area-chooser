@@ -20,7 +20,7 @@
                 <p class="mt-2 font-italic">{{ (city.forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (city.forecast || {}).temperature || '... °C' }}</span></p>
                 <p v-html="$t('common.city_1_desc')"></p>
               </mdb-card-text>
-              <mdb-btn color="info">
+              <mdb-btn color="info" disabled="true">
                 <mdb-icon fas icon="question" />
                 {{ $t('common.details') }}
               </mdb-btn>
