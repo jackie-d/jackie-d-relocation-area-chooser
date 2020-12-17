@@ -137,10 +137,6 @@
 
 <style scoped>
 
-  .force-overflow {
-    min-height: 450px;
-  }
-
   .scrollbar {
     float: left;
     height: 300px;

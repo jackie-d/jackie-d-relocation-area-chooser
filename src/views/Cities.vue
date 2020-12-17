@@ -12,10 +12,10 @@
             <mdb-card-image :src="require('@/assets/amsterdam.jpg')"></mdb-card-image>
             <mdb-card-body>
               <mdb-card-title>
-                {{ $t('cities.city_1_title') }}
+                {{ $t('common.city_1_title') }}
               </mdb-card-title>
               <mdb-card-text>
-                <p v-html="$t('cities.city_1_desc')"></p>
+                <p v-html="$t('common.city_1_desc')"></p>
               </mdb-card-text>
             </mdb-card-body>
           </mdb-card>
@@ -25,10 +25,10 @@
             <mdb-card-image :src="require('@/assets/madrid.jpg')"></mdb-card-image>
             <mdb-card-body>
               <mdb-card-title>
-                {{ $t('cities.city_2_title') }}
+                {{ $t('common.city_2_title') }}
               </mdb-card-title>
               <mdb-card-text>
-                <p v-html="$t('cities.city_2_desc')"></p>
+                <p v-html="$t('common.city_2_desc')"></p>
               </mdb-card-text>
             </mdb-card-body>
           </mdb-card>
@@ -38,10 +38,10 @@
             <mdb-card-image :src="require('@/assets/budapest.jpg')"></mdb-card-image>
             <mdb-card-body>
               <mdb-card-title>
-                {{ $t('cities.city_3_title') }}
+                {{ $t('common.city_3_title') }}
               </mdb-card-title>
               <mdb-card-text>
-                <p v-html="$t('cities.city_3_desc')"></p>
+                <p v-html="$t('common.city_3_desc')"></p>
               </mdb-card-text>
             </mdb-card-body>
           </mdb-card>

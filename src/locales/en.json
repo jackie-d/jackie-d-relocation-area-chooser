@@ -3,7 +3,15 @@
     "details": "Details",
     "select": "Choose this",
     "close": "Close",
-    "hello_name": "Hello, {name}!"
+    "hello_name": "Hello, {name}!",
+    "weather_details": "Weather Details",
+    "forecast_details": "Forecast Details",
+    "city_1_title": "Amsterdam",
+    "city_1_desc": "<b>Title</b><br />Description",
+    "city_2_title": "Madrid",
+    "city_2_desc": "<b>Title</b><br />Description",
+    "city_3_title": "Budapest",
+    "city_3_desc": "<b>Title</b><br />Description"
   },
   "dashboard": {
     "welcome": "Welcome to Relocation Area Chooser",
@@ -25,40 +33,38 @@
   "cities": {
     "title": "Proposed cities",
     "desc": "A quick look for the best areas for you relocation",
-    "city_1_title": "Amsterdam",
-    "city_1_desc": "<b>Title</b><br />Description",
-    "city_2_title": "Madrid",
-    "city_2_desc": "<b>Title</b><br />Description",
-    "city_3_title": "Budapest",
-    "city_3_desc": "<b>Title</b><br />Description",
     "start_selection": "Start your experience"
   },
   "weather": {
     "title": "Have a look at the weather",
     "desc": "Find out details and the best weather for your gladness. Select the one you prefer.",
-    "city_1_title": "Amsterdam",
-    "city_1_desc": "<b>Title</b><br />Description",
-    "city_2_title": "Madrid",
-    "city_2_desc": "<b>Title</b><br />Description",
-    "city_3_title": "Budapest",
-    "city_3_desc": "<b>Title</b><br />Description",
     "next_step": "Get into the next step",
     "current_weather": "The current state is:"
   },
   "flights": {
     "title": "Find the best connection to your city",
     "desc": "Look at the airports and flights nearby and have a good look at the best",
-    "city_1_title": "Amsterdam",
-    "city_1_desc": "<b>Title</b><br />Description",
-    "city_2_title": "Madrid",
-    "city_2_desc": "<b>Title</b><br />Description",
-    "city_3_title": "Budapest",
-    "city_3_desc": "<b>Title</b><br />Description",
     "next_step": "Get into the next step",
     "flights_cost": "Prices for your flight",
     "destination": "Destination",
     "price": "Cost",
     "time": "Start at",
     "duration": "Duration time"
+  },
+  "resume": {
+    "title": "Have a new look at your choice",
+    "desc": "Came to your final destination",
+    "next_step": "Move on to the review",
+    "flights_cost": "Prices for your flight",
+    "destination": "Destination",
+    "price": "Cost",
+    "time": "Start at",
+    "duration": "Duration time",
+    "weather": "Weather review",
+    "current_weather": "The weather forecast",
+    "flights": "Flights Review",
+    "chosen_for_flights": "Your choiche for the flights",
+    "chosen_for_weather": "Your choiche for the weather",
+    "chosen_for_both": "Your choiche for both the weather and the flights"
   }
 }

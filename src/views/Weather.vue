@@ -18,7 +18,7 @@
                 <p style="font-size: smaller;" class="grey-text">{{ $t('weather.current_weather') }}</p>
                 <img v-if="city.forecast" :src="city.forecast.iconUrl" />
                 <p class="mt-2 font-italic">{{ (city.forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (city.forecast || {}).temperature || '... °C' }}</span></p>
-                <p v-html="$t('weather.city_1_desc')"></p>
+                <p v-html="$t('common.city_1_desc')"></p>
               </mdb-card-text>
               <mdb-btn color="info">
                 <mdb-icon fas icon="question" />
