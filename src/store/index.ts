@@ -12,17 +12,23 @@ const state = {
     {
       'name': 'Amsterdam',
       'accuweatherLocationId': 249758,
-      'airportCode': 'AMS'
+      'airportCode': 'AMS',
+      'forecast': [],
+      'flights': []
     },
     {
       'name': 'Madrid',
       'accuweatherLocationId': 308526,
-      'airportCode': 'MAD'
+      'airportCode': 'MAD',
+      'forecast': [],
+      'flights': []
     },
     {
       'name': 'Budapest',
       'accuweatherLocationId': 187423,
-      'airportCode': 'BUD'
+      'airportCode': 'BUD',
+      'forecast': [],
+      'flights': []
     }
   ]
 }
@@ -46,7 +52,7 @@ const actions = {
         commit('SET_FORECAST', {cityIndex, forecast})
       })
       .catch(error => {
-        alert('Network Error: API over limit or no connection');
+        alert('Error: API over server limit');
         console.log(error);
       })
     }
@@ -78,7 +84,6 @@ const actions = {
       axios.get( url.toString(), axiosConfig )
       .then(response => {
         const apiData = response.data.data;
-        console.log(apiData);
         const flights = apiData.map(flight => ({
           to: flight.cityTo+', '+flight.countryTo.name,
           price: flight.price,
@@ -89,7 +94,6 @@ const actions = {
         commit('SET_FLIGHTS', {cityIndex, flights})
       })
       .catch(error => {
-        alert('Network Error: API over limit or no connection');
         console.log(error);
       })
     }
