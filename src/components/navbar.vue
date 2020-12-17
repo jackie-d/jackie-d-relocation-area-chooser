@@ -5,20 +5,21 @@
         </mdb-navbar-brand>
         <mdb-navbar-toggler>
             <mdb-navbar-nav>
-                    <mdb-nav-item :to="{'path': '/'}" active>
-                        <mdb-icon icon="home" />
-                        Home
-                    </mdb-nav-item>
-                    
-                    <mdb-nav-item :to="{'path': '/name'}" active>
-                        <mdb-icon icon="archway" />
-                        Find your area
-                    </mdb-nav-item>
 
-                    <mdb-nav-item :to="{'path': '/history'}" active>
-                        <mdb-icon icon="history" />
-                        Your searches
-                    </mdb-nav-item>
+                <mdb-nav-item :to="{'path': '/'}" active>
+                    <mdb-icon icon="home" />
+                    Home
+                </mdb-nav-item>
+                
+                <mdb-nav-item :to="{'path': '/name'}" active v-if="isMenuShown">
+                    <mdb-icon icon="archway" />
+                    Find your area
+                </mdb-nav-item>
+
+                <mdb-nav-item :to="{'path': '/history'}" active v-if="isMenuShown">
+                    <mdb-icon icon="history" />
+                    Your searches
+                </mdb-nav-item>
 
                 <mdb-dropdown tag="li" class="nav-item" slot="">
                     <mdb-dropdown-toggle tag="a" navLink color="indigo" slot="toggle" waves-fixed>
@@ -49,7 +50,7 @@ export default Vue.extend({
     props: ['showMenu'],
     data: function () {
         return {
-            isMenuShown: this.showMenu ? this.showMenu: true,
+            isMenuShown: this.showMenu !== undefined ? this.showMenu : true,
             name: store.state.name
         }
     },

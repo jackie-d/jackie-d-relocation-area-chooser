@@ -93,7 +93,6 @@ const actions = {
       axios.get( url.toString(), axiosConfig )
       .then(response => {
         const apiData = response.data.data;
-        console.log(apiData);
         const flights = apiData.map(flight => {
           const airlines = flight.airlines.join(', ');
           return {
