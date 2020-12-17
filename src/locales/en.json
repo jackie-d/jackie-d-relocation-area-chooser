@@ -26,22 +26,22 @@
     "title": "Proposed cities",
     "desc": "A quick look for the best areas for you relocation",
     "city_1_title": "Amsterdam",
-    "city_1_desc": "<b>Title</b><br />Test",
+    "city_1_desc": "<b>Title</b><br />Description",
     "city_2_title": "Madrid",
-    "city_2_desc": "<b>Title</b><br />Test",
+    "city_2_desc": "<b>Title</b><br />Description",
     "city_3_title": "Budapest",
-    "city_3_desc": "<b>Title</b><br />Test",
+    "city_3_desc": "<b>Title</b><br />Description",
     "start_selection": "Start your experience"
   },
   "weather": {
     "title": "Have a look at the weather",
     "desc": "Find out details and the best weather for your gladness. Select the one you prefer.",
     "city_1_title": "Amsterdam",
-    "city_1_desc": "<b>Title</b><br />Test",
+    "city_1_desc": "<b>Title</b><br />Description",
     "city_2_title": "Madrid",
-    "city_2_desc": "<b>Title</b><br />Test",
+    "city_2_desc": "<b>Title</b><br />Description",
     "city_3_title": "Budapest",
-    "city_3_desc": "<b>Title</b><br />Test",
+    "city_3_desc": "<b>Title</b><br />Description",
     "next_step": "Get into the next step",
     "current_weather": "The current state is:"
   }

@@ -8,7 +8,7 @@
         </section>
     <mdb-row>
       <mdb-col md="4" class="mt-2" v-for="(city, cityIndex) in cities" :key="city.name">
-          <mdb-card :style="selectedCity == cityIndex ? 'box-shadow: 0 2px 5px 0 rgba(0,0,255,0.30), 0 2px 10px 0 rgba(0,0,255,0.30)' : ''">
+          <mdb-card :style="selectedCity == cityIndex ? 'box-shadow: 0 2px 5px 0 rgba(0,0,255,0.70), 0 2px 10px 0 rgba(0,0,255,0.70)' : ''">
             <mdb-card-image :src="require('@/assets/' + city.name.toLowerCase() + '.jpg')"></mdb-card-image>
             <mdb-card-body>
               <mdb-card-title>
@@ -28,7 +28,7 @@
                 <mdb-icon fas icon="check-square" />
                 {{ $t('common.select') }}
               </mdb-btn>
-              <div class="custom-control custom-checkbox custom-control-inline" style="position: absolute; bottom: 8px; right: -4px; z-index: 999;">
+              <div class="custom-control custom-checkbox custom-control-inline" style="position: absolute; bottom: 8px; right: -12px; z-index: 999;">
                 <input type="checkbox" class="custom-control-input" id="defaultInline1" :checked="selectedCity == cityIndex">
                 <label class="custom-control-label" for="defaultInline1"></label>
               </div>
