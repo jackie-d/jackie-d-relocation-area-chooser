@@ -44,5 +44,16 @@
     "city_3_desc": "<b>Title</b><br />Description",
     "next_step": "Get into the next step",
     "current_weather": "The current state is:"
+  },
+  "flights": {
+    "title": "Find the best connection to your city",
+    "desc": "Look at the airports and flights nearby and have a good look at the best",
+    "city_1_title": "Amsterdam",
+    "city_1_desc": "<b>Title</b><br />Description",
+    "city_2_title": "Madrid",
+    "city_2_desc": "<b>Title</b><br />Description",
+    "city_3_title": "Budapest",
+    "city_3_desc": "<b>Title</b><br />Description",
+    "next_step": "Get into the next step"
   }
 }
