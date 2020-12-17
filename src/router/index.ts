@@ -10,6 +10,7 @@ import FlightsDetail from '../views/FlightsDetail.vue'
 import Resume from '../views/Resume.vue'
 import Result from '../views/Result.vue'
 import History from '../views/History.vue'
+import { nextTick } from 'vue/types/umd'
 
 Vue.use(VueRouter)
 
@@ -70,6 +71,53 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+import store from '../store';
+
+router.beforeEach((to, from, next) => {
+  const name = store.state.name;
+  const weatherChosenCity = store.state.weatherChosenCity;
+  const flightsChosenCity = store.state.flightsChosenCity;
+  if ( 
+    (
+      (name == undefined || name === '') 
+      &&
+      (
+        to.path == '/cities' || 
+        to.path == '/weather' || 
+        to.path == '/weather-details' || 
+        to.path == '/flights' || 
+        to.path == '/flights-details' || 
+        to.path == '/resume' || 
+        to.path == '/result'
+      )
+    )
+    ||
+    (
+      (weatherChosenCity == undefined) 
+      &&
+      (
+        to.path == '/flights' || 
+        to.path == '/flights-details' || 
+        to.path == '/resume' || 
+        to.path == '/result'
+      )
+    )
+    ||
+    (
+      (flightsChosenCity == undefined) 
+      &&
+      (
+        to.path == '/resume' || 
+        to.path == '/result'
+      )
+    )
+  ) {
+    next('/');
+  } else {
+    next();
+  }
 })
 
 export default router

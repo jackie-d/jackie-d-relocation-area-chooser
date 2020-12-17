@@ -8,6 +8,8 @@ Vue.use(Vuex)
 
 const state = {
   name: undefined,
+  weatherChosenCity: undefined,
+  flightsChosenCity: undefined,
   cities: [
     {
       'name': 'Amsterdam',
@@ -115,10 +117,10 @@ const mutations = {
     state.cities = cities;
   },
   CHOOSE_WEATHER(state, chosenCity) {
-    state.chosenCity = chosenCity;
+    state.weatherChosenCity = chosenCity;
   },
   CHOOSE_FLIGHTS(state, chosenCity) {
-    state.chosenCity = chosenCity;
+    state.flightsChosenCity = chosenCity;
   }
 }
 
