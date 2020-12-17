@@ -49,11 +49,11 @@
                   </mdb-col>
                 </mdb-row>
               </mdb-card-text>
-              <mdb-btn color="info" disabled="true">
+              <mdb-btn color="info" :disabled="true">
                 <mdb-icon fas icon="question" />
                 {{ $t('common.weather_details') }}
               </mdb-btn>
-              <mdb-btn color="info" disabled="true">
+              <mdb-btn color="info" :disabled="true">
                 <mdb-icon fas icon="question" />
                 {{ $t('common.forecast_details') }}
               </mdb-btn>
@@ -111,11 +111,11 @@
                   </mdb-col>
                 </mdb-row>
               </mdb-card-text>
-              <mdb-btn color="info" disabled="true">
+              <mdb-btn color="info" :disabled="true">
                 <mdb-icon fas icon="question" />
                 {{ $t('common.weather_details') }}
               </mdb-btn>
-              <mdb-btn color="info" disabled="true">
+              <mdb-btn color="info" :disabled="true">
                 <mdb-icon fas icon="question" />
                 {{ $t('common.forecast_details') }}
               </mdb-btn>

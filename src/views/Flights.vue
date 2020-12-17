@@ -45,7 +45,7 @@
                   </mdb-col>
                 </mdb-row>
               </mdb-card-text>
-              <mdb-btn color="info" disabled="true">
+              <mdb-btn color="info" :disabled="true">
                 <mdb-icon fas icon="question" @click="openDetails"/>
                 {{ $t('common.details') }}
               </mdb-btn>
