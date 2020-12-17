@@ -1,46 +1,48 @@
 <template>
-  <mdb-container fluid style="height: 100%">
+  <div>
     <navbar v-bind:showMenu="false" />
+    <mdb-container fluid style="height: 100%">
+      
+      <section class="text-center">
+          <h2 class="h1 pt-4">{{ $t('name.title') }}</h2>
+
+          <p class="grey-text mb-5 mt-5 px-3">{{ $t('name.desc') }}</p>
+          <mdb-row class="justify-content-sm-center">
+
+            <mdb-col sm="6">
+              <mdb-card testimonial>
+                <mdb-card-up gradient="rainy-ashville"></mdb-card-up>
+                <mdb-card-avatar color="white" class="mx-auto mt-4"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle"></mdb-card-avatar>
+                <mdb-card-body>
+                  <mdb-card-title>{{ $t('name.your_name') }}</mdb-card-title>
+                  <mdb-input 
+                    v-model="name" 
+                  />
+                  <hr/>
+                  <mdb-btn color="primary" v-on:click="goToCities" :disabled="name == undefined || name == ''">
+                    <mdb-icon icon="eye" />
+                    Let's find the city
+                  </mdb-btn>
+                </mdb-card-body>
+              </mdb-card>
+            </mdb-col>
+
+          </mdb-row>
+        </section>
     
-    <section class="text-center">
-        <h2 class="h1 pt-4">{{ $t('name.title') }}</h2>
-
-        <p class="grey-text mb-5 mt-5 px-3">{{ $t('name.desc') }}</p>
-        <mdb-row class="justify-content-sm-center">
-
-          <mdb-col sm="6">
-            <mdb-card testimonial>
-              <mdb-card-up gradient="rainy-ashville"></mdb-card-up>
-              <mdb-card-avatar color="white" class="mx-auto mt-4"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle"></mdb-card-avatar>
-              <mdb-card-body>
-                <mdb-card-title>{{ $t('name.your_name') }}</mdb-card-title>
-                <mdb-input 
-                  v-model="name" 
-                />
-                <hr/>
-                <mdb-btn color="primary" v-on:click="goToCities" :disabled="name == undefined || name == ''">
-                  <mdb-icon icon="eye" />
-                  Let's find the city
-                </mdb-btn>
-              </mdb-card-body>
-            </mdb-card>
-          </mdb-col>
-
-        </mdb-row>
-      </section>
-  
-      <mdb-modal :show="modal" @close="modal = false">
-        <mdb-modal-header>
-          <mdb-modal-title>{{ $t('name.invalid_name_title') }}</mdb-modal-title>
-        </mdb-modal-header>
-        <mdb-modal-body>{{ $t('name.invalid_name_desc') }}</mdb-modal-body>
-        <mdb-modal-footer>
-          <mdb-btn color="secondary" @click.native="modal = false">{{ $t('common.close') }}</mdb-btn>
-        </mdb-modal-footer>
-      </mdb-modal>
+        <mdb-modal :show="modal" @close="modal = false">
+          <mdb-modal-header>
+            <mdb-modal-title>{{ $t('name.invalid_name_title') }}</mdb-modal-title>
+          </mdb-modal-header>
+          <mdb-modal-body>{{ $t('name.invalid_name_desc') }}</mdb-modal-body>
+          <mdb-modal-footer>
+            <mdb-btn color="secondary" @click.native="modal = false">{{ $t('common.close') }}</mdb-btn>
+          </mdb-modal-footer>
+        </mdb-modal>
 
 
-  </mdb-container>
+    </mdb-container>
+  </div>
 </template>
 
 <script lang="ts">

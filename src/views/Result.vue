@@ -1,6 +1,7 @@
 <template>
+  <div>
+  <navbar v-bind:showMenu="false" />
   <mdb-container fluid style="height: 100%">
-    <navbar v-bind:showMenu="false" />
 
     <section class="text-center">
       <h2 class="h1 pt-4">{{ $t('result.title') }}</h2>
@@ -73,6 +74,7 @@
       <mdb-btn color="primary" v-on:click="goToNext" :disabled="chosenCity === undefined"><mdb-icon icon="arrow-right" class="mr-1"/> {{ $t('result.next_step') }}</mdb-btn>
     </div>
   </mdb-container>
+  </div>
 </template>
 
 <script lang="ts">

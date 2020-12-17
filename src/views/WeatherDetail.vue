@@ -1,10 +1,12 @@
 <template>
-  <mdb-container fluid style="height: 100%">
+  <div>
     <navbar v-bind:showMenu="false" />
-    <div>
+    <mdb-container fluid style="height: 100%">
+      <div>
 
-    </div>
-  </mdb-container>
+      </div>
+    </mdb-container>
+  </div>
 </template>
 
 <script lang="ts">
