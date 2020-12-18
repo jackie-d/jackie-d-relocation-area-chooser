@@ -8,5 +8,10 @@ module.exports = {
       localeDir: 'locales',
       enableInSFC: false
     }
+  },
+
+  pwa: {
+    'name': 'Relocation Area Chooser',
+    'themeColor': '#4285F4'
   }
 }
