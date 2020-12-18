@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar />
-    <mdb-container fluid style="height: 100%">
+    <mdb-container style="height: 100%">
       <section class="text-center">
         <h4 class="pt-4">{{ $t('history.title') }}</h4>
       </section>

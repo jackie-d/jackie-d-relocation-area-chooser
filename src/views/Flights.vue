@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar v-bind:showMenu="false" />
-    <mdb-container fluid style="height: 100%">
+    <mdb-container style="height: 100%">
           <section class="text-center">
             <h2 class="h1 pt-4">
               <mdb-icon fas icon="plane-arrival" />
@@ -19,9 +19,9 @@
                   {{ city.name }}
                 </mdb-card-title>  
                 <mdb-card-text>
+                  <p style="font-size: smaller;" class="grey-text">{{ $t('flights.flights_cost') }}</p>
                   <mdb-row>
                     <mdb-col class="scrollbar scrollbar-primary">
-                        <p style="font-size: smaller;" class="grey-text">{{ $t('flights.flights_cost') }}</p>
                         <mdb-tbl sm>
                           <mdb-tbl-head>
                             <tr>

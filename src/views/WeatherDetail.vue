@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar v-bind:showMenu="false" />
-    <mdb-container fluid style="height: 100%">
+    <mdb-container style="height: 100%">
       <div>
 
       </div>

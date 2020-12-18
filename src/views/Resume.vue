@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar v-bind:showMenu="false" />
-    <mdb-container fluid style="height: 100%">
+    <mdb-container style="height: 100%">
           <section class="text-center">
             <h2 class="h1 pt-4">{{ $t('resume.title') }}</h2>
 
@@ -31,10 +31,10 @@
                     <p v-if="!accuweatherError" class="text-small text-grey font-italic">{{ $t('common.loading') }}</p>
                     <p v-if="accuweatherError" class="text-small text-grey font-italic">{{ $t('common.error_aw') }}</p>
                   </div>
-                  <mdb-row class="mt-4">
+                  <p class="font-weight-bold mt-4">{{ $t('resume.flights') }}</p>
+                  <p style="font-size: smaller;" class="grey-text">{{ $t('resume.flights_cost') }}</p>
+                  <mdb-row>
                     <mdb-col class="scrollbar scrollbar-primary">
-                        <p class="font-weight-bold">{{ $t('resume.flights') }}</p>
-                        <p style="font-size: smaller;" class="grey-text">{{ $t('resume.flights_cost') }}</p>
                         <mdb-tbl sm>
                           <mdb-tbl-head>
                             <tr>
