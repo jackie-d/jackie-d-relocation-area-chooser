@@ -56,16 +56,12 @@
 <script lang="ts">
 
   import Vue from 'vue';
-  import VueAxios from 'vue-axios';
 
   import navbar from '@/components/navbar.vue';
   import { mdbCardImage, mdbCardText, mdbModal, mdbModalHeader, mdbModalTitle, mdbModalBody, mdbModalFooter, mdbContainer, mdbCard, mdbBtn, mdbRow, mdbCol, mdbCardUp, mdbCardAvatar, mdbCardBody, mdbCardTitle, mdbIcon, mdbInput } from 'mdbvue';
   import router from '../router';
 
   import store from '../store';
-  import axios from 'axios';
-
-  Vue.use(VueAxios, axios)
 
   export default Vue.extend({
     name: 'Weather',
