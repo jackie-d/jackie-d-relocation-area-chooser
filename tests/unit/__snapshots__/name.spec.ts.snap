@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Name view Snapshot consistence 1`] = `
+<div>
+  <navbar-stub></navbar-stub>
+  <mdb-container-stub tag="div" style="height: 100%;">
+    <section class="text-center">
+      <h2 class="h1 pt-4">name.title</h2>
+      <p class="grey-text mb-5 mt-5 px-3">name.desc</p>
+      <mdb-row-stub tag="div" class="justify-content-sm-center">
+        <mdb-col-stub tag="div" sm="6">
+          <mdb-card-stub tag="div" testimonial="true">
+            <mdb-card-up-stub tag="div" gradient="rainy-ashville"></mdb-card-up-stub>
+            <mdb-card-avatar-stub tag="div" color="white" class="mx-auto mt-4"><img src="" class="rounded-circle"></mdb-card-avatar-stub>
+            <mdb-card-body-stub tag="div">
+              <mdb-card-title-stub tag="h4">name.your_name</mdb-card-title-stub>
+              <mdb-input-stub tag="input" type="text" value=""></mdb-input-stub>
+              <hr>
+              <mdb-btn-stub waves="true" tag="button" color="primary" type="button" disabled="true">
+                <mdb-icon-stub icon="eye" color=""></mdb-icon-stub>
+                Let's find the city
+              </mdb-btn-stub>
+            </mdb-card-body-stub>
+          </mdb-card-stub>
+        </mdb-col-stub>
+      </mdb-row-stub>
+    </section>
+    <mdb-modal-stub tag="div" bgsrc="" direction="top">
+      <mdb-modal-header-stub tag="div" close="true">
+        <mdb-modal-title-stub tag="h5">name.invalid_name_title</mdb-modal-title-stub>
+      </mdb-modal-header-stub>
+      <mdb-modal-body-stub tag="div">name.invalid_name_desc</mdb-modal-body-stub>
+      <mdb-modal-footer-stub tag="div">
+        <mdb-btn-stub waves="true" tag="button" color="secondary" type="button">common.close</mdb-btn-stub>
+      </mdb-modal-footer-stub>
+    </mdb-modal-stub>
+  </mdb-container-stub>
+</div>
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Snapshot consistence 1`] = `
+<div>
+  <navbar-stub></navbar-stub>
+  <mdb-container-stub tag="div" fluid="true" style="height: 100%;">
+    <div class="home" style="margin: 0px -15px;">
+      <mdb-card-stub tag="div" class="card-image" style="background-image: url(); background-size: cover; background-position: right bottom; min-height: 90vh;">
+        <div class="text-white text-center py-5 px-4 my-5">
+          <div>
+            <h2 class="card-title h1-responsive pt-5 mb-5 font-weight-bold"><strong>dashboard.welcome</strong></h2>
+            <p class="mx-5 mb-5 font-weight-bold">
+              dashboard.description
+            </p>
+            <div>
+              <mdb-btn-stub waves="true" tag="button" color="primary" size="lg" type="button" icon="globe">dashboard.start</mdb-btn-stub>
+            </div>
+            <div class="mt-5 mb-5">
+              <mdb-btn-stub waves="true" tag="button" color="primary" size="md" type="button" icon="caret-square-left">dashboard.history</mdb-btn-stub>
+            </div>
+          </div>
+        </div>
+      </mdb-card-stub>
+    </div>
+  </mdb-container-stub>
+  <mainfooter-stub></mainfooter-stub>
+</div>
+`;

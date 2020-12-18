@@ -12,6 +12,7 @@
     "start": "vue-cli-service serve --open"
   },
   "dependencies": {
+    "babel-plugin-transform-require-context": "^0.1.1",
     "core-js": "^3.6.5",
     "dotenv": "^8.2.0",
     "mdbvue": "6.7.2",
