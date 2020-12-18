@@ -11,20 +11,20 @@
 
       <mdb-col xs="12" sm="12" class="mt-2">
 
-          <img :src="require('@/assets/' + cities[finalChosenCity].name.toLowerCase() + '.jpg')" class="img-fluid rounded-circle hoverable" >
+          <img :src="require('@/assets/' + cities[finalChosenCity()].name.toLowerCase() + '.jpg')" class="img-fluid rounded-circle hoverable" >
           
-          <h1 class="mt-2">{{ cities[finalChosenCity].name }}</h1>
+          <h1 class="mt-2">{{ cities[finalChosenCity()].name }}</h1>
           <h5>{{ $t('result.congrats_name', {name: name}) }}</h5>
 
           <mdb-card class="mt-4">
             <mdb-card-body>
               <p class="font-weight-bold">{{ $t('result.weather') }}</p>
               <p style="font-size: smaller;" class="grey-text">{{ $t('result.current_weather') }}</p>
-              <div v-if="cities[finalChosenCity].forecast">
-                <img v-if="cities[finalChosenCity].forecast" :src="cities[finalChosenCity].forecast.iconUrl" />
-                <p class="mt-2 font-italic">{{ (cities[finalChosenCity].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[finalChosenCity].forecast || {}).temperature || '... °C' }}</span></p>
+              <div v-if="cities[finalChosenCity()].forecast">
+                <img v-if="cities[finalChosenCity()].forecast" :src="cities[finalChosenCity()].forecast.iconUrl" />
+                <p class="mt-2 font-italic">{{ (cities[finalChosenCity()].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[finalChosenCity()].forecast || {}).temperature || '... °C' }}</span></p>
               </div>
-              <div v-if="cities[finalChosenCity].forecast == undefined">
+              <div v-if="cities[finalChosenCity()].forecast == undefined">
                 <div v-if="!accuweatherError" class="spinner-border text-light mt-4" role="status">
                   <span class="sr-only">Loading...</span>
                 </div>
@@ -49,7 +49,7 @@
                           <th>{{ $t('flights.duration') }}</th>
                         </tr>
                       </mdb-tbl-head>
-                      <mdb-tbl-body v-for="flight in cities[finalChosenCity].flights" :key="flight.to">
+                      <mdb-tbl-body v-for="flight in cities[finalChosenCity()].flights" :key="flight.to">
                         <tr>
                           <th class="font-weight-bold">{{ flight.to }}</th>
                           <td>{{ flight.price }} €</td>
@@ -58,7 +58,7 @@
                         </tr>
                       </mdb-tbl-body>
                     </mdb-tbl>
-                    <div class="spinner-border text-light mt-4" role="status" v-if="!(cities[finalChosenCity].flights && cities[finalChosenCity].flights.length > 0)">
+                    <div class="spinner-border text-light mt-4" role="status" v-if="!(cities[finalChosenCity()].flights && cities[finalChosenCity()].flights.length > 0)">
                       <span class="sr-only">Loading...</span>
                     </div>
                 </mdb-col>
@@ -107,28 +107,27 @@
   export default Vue.extend({
     name: 'Result',
     data: function() {
-      const vm = this;
       return {
         cities: store.state.cities, 
-        finalChosenCity: function() {
-          if ( vm.$route.query.historyChosenCity && typeof vm.$route.query.historyChosenCity == 'string' ) {
-            return parseInt(vm.$route.query.historyChosenCity);
-          }
-          return store.state.finalChosenCity;
-        },
         name: store.state.name,
         isFromHistory: this.$route.query.historyChosenCity ? true : false,
         accuweatherError: false
       }
     },
     methods: {
+      finalChosenCity: function() {
+        if ( this.$route.query.historyChosenCity && typeof this.$route.query.historyChosenCity == 'string' ) {
+          return parseInt(this.$route.query.historyChosenCity);
+        }
+        return store.state.finalChosenCity;
+      },
       goToHome: function() {
         if ( this.isFromHistory ) {
           router.push('/history');
           return;
         }
         store.commit('STORE_RESULT', {
-            chosenCity: this.finalChosenCity,
+            chosenCity: this.finalChosenCity(),
             time: new Date(),
             name: this.name
           });

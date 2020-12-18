@@ -21,7 +21,7 @@
                   <p class="font-weight-bold">{{ $t('resume.weather') }}</p>
                   <p style="font-size: smaller;" class="grey-text">{{ $t('resume.current_weather') }}</p>
                   <div v-if="cities[weatherChosenCity].forecast">
-                    <img v-if="cities[weatherChosenCity].forecast" :src="cities[weatherChosenCity].iconUrl" />
+                    <img v-if="cities[weatherChosenCity].forecast" :src="cities[weatherChosenCity].forecast.iconUrl" />
                     <p class="mt-2 font-italic">{{ (cities[weatherChosenCity].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[weatherChosenCity].forecast || {}).temperature || '... °C' }}</span></p>
                   </div>
                   <div v-if="cities[weatherChosenCity].forecast == undefined">
