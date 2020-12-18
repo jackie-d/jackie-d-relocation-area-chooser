@@ -107,11 +107,17 @@
   export default Vue.extend({
     name: 'Result',
     data: function() {
+      const vm = this;
       return {
         cities: store.state.cities, 
-        finalChosenCity: store.state.finalChosenCity,
+        finalChosenCity: function() {
+          if ( vm.$route.query.historyChosenCity && typeof vm.$route.query.historyChosenCity == 'string' ) {
+            return parseInt(vm.$route.query.historyChosenCity);
+          }
+          return store.state.finalChosenCity;
+        },
         name: store.state.name,
-        isFromHistory: false,
+        isFromHistory: this.$route.query.historyChosenCity ? true : false,
         accuweatherError: false
       }
     },
@@ -140,11 +146,6 @@
           this.accuweatherError = true;
           console.log('ERROR', err);
         });
-        //
-        if ( this.$route.query.historyChosenCity && typeof this.$route.query.historyChosenCity == 'string' ) {
-          this.finalChosenCity = parseInt(this.$route.query.historyChosenCity);
-          this.isFromHistory = true;
-        }
     },
     components: {
       mdbContainer,
