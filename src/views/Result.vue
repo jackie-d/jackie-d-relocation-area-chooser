@@ -20,11 +20,11 @@
             <mdb-card-body>
               <p class="font-weight-bold">{{ $t('result.weather') }}</p>
               <p style="font-size: smaller;" class="grey-text">{{ $t('result.current_weather') }}</p>
-              <div v-if="cities[finalChosenCity].forecast.length > 0">
+              <div v-if="cities[finalChosenCity].forecast">
                 <img v-if="cities[finalChosenCity].forecast" :src="cities[finalChosenCity].forecast.iconUrl" />
                 <p class="mt-2 font-italic">{{ (cities[finalChosenCity].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[finalChosenCity].forecast || {}).temperature || '... °C' }}</span></p>
               </div>
-              <div v-if="cities[finalChosenCity].forecast.length == 0">
+              <div v-if="cities[finalChosenCity].forecast == undefined">
                 <div v-if="!accuweatherError" class="spinner-border text-light mt-4" role="status">
                   <span class="sr-only">Loading...</span>
                 </div>

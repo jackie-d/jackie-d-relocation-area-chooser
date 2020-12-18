@@ -16,21 +16,21 @@ const state = {
       'name': 'Amsterdam',
       'accuweatherLocationId': 249758,
       'airportCode': 'AMS',
-      'forecast': [],
+      'forecast': undefined,
       'flights': []
     },
     {
       'name': 'Madrid',
       'accuweatherLocationId': 308526,
       'airportCode': 'MAD',
-      'forecast': [],
+      'forecast': undefined,
       'flights': []
     },
     {
       'name': 'Budapest',
       'accuweatherLocationId': 187423,
       'airportCode': 'BUD',
-      'forecast': [],
+      'forecast': undefined,
       'flights': []
     }
   ],
@@ -40,29 +40,30 @@ const state = {
 const actions = {
   initWeather({ commit, state }) {
     const accuweatherApiKey = process.env.VUE_APP_ACCUWEATHER_API_KEY || '';
+    const apiRequests = [];
     for( let cityIndex in state.cities ) {
       const city = state.cities[cityIndex];
-      if ( city.forecast.lenght > 0 ) {
+      if ( city.forecast ) {
         return;
       }
       const accuWeatherForecastUrl = 'https://dataservice.accuweather.com/currentconditions/v1/' + city.accuweatherLocationId;
       var url = new URL(accuWeatherForecastUrl);
       url.searchParams.set('apikey', accuweatherApiKey);
-      return axios.get( url.toString() )
-      .then(response => {
-        const apiData = response.data[0];
-        const forecast = {
-          text: apiData.WeatherText,
-          iconUrl: 'https://developer.accuweather.com/sites/default/files/' + apiData.WeatherIcon + '-s.png',
-          temperature: apiData.Temperature.Metric.Value + ' ' + apiData.Temperature.Metric.Unit
-        }
-        commit('SET_FORECAST', {cityIndex, forecast})
-      })
-      .catch(error => {
-        console.log(error);
-        throw error;
-      })
+      const apiRequest = axios.get( url.toString() )
+        .then(response => {
+          const apiData = response.data[0];
+          const weatherIcon = apiData.WeatherIcon ? (apiData.WeatherIcon+'').padStart(2, '0') : '01';
+          const forecast = {
+            text: apiData.WeatherText,
+            iconUrl: 'https://developer.accuweather.com/sites/default/files/' + weatherIcon + '-s.png',
+            temperature: apiData.Temperature.Metric.Value + ' ' + apiData.Temperature.Metric.Unit
+          }
+          commit('SET_FORECAST', {cityIndex, forecast})
+          return undefined;
+        });
+      apiRequests.push(apiRequest);
     }
+    return Promise.all(apiRequests);
   },
   initFlights({ commit, state }) {
     const tequilaApiKey = process.env.VUE_APP_TEQUILA_API_KEY || '';

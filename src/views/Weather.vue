@@ -16,12 +16,12 @@
                   {{ city.name }}
                 </mdb-card-title>
                 <mdb-card-text>
-                  <div v-if="city.forecast.length > 0">
+                  <div v-if="city.forecast">
                     <p style="font-size: smaller;" class="grey-text">{{ $t('weather.current_weather') }}</p>
                     <img v-if="city.forecast" :src="city.forecast.iconUrl" />
                     <p class="mt-2 font-italic">{{ (city.forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (city.forecast || {}).temperature || '... °C' }}</span></p>
                   </div>
-                  <div v-if="city.forecast.length == 0">
+                  <div v-if="city.forecast == undefined">
                     <div v-if="!accuweatherError" class="spinner-border text-light mt-4" role="status">
                       <span class="sr-only">Loading...</span>
                     </div>
