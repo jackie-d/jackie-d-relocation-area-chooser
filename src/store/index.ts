@@ -40,7 +40,7 @@ const state = {
 const actions = {
   initWeather({ commit, state }) {
     const accuweatherApiKey = process.env.VUE_APP_ACCUWEATHER_API_KEY || '';
-    const apiRequests = [];
+    const apiRequests: Promise<undefined>[] = [];
     for( let cityIndex in state.cities ) {
       const city = state.cities[cityIndex];
       if ( city.forecast ) {
