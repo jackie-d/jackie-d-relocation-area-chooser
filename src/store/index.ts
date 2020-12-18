@@ -10,7 +10,7 @@ const state = {
   name: undefined,
   weatherChosenCity: undefined,
   flightsChosenCity: undefined,
-  finalChosenCity: undefined as unknown as number,
+  finalChosenCity: undefined,
   cities: [
     {
       'name': 'Amsterdam',
