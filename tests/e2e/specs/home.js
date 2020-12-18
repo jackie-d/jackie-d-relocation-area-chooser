@@ -2,7 +2,7 @@
 
 describe('Home', () => {
   it('Render title', () => {
-    cy.visit('http://192.168.178.59:8080/')
+    cy.visit('http://localhost:8080')
     cy.contains('h2', 'Welcome to Relocation Area Chooser')
     cy.get('button').eq(1).click()
     cy.location('pathname').should('match', /\/name$/);
@@ -15,5 +15,11 @@ describe('Home', () => {
     cy.get('select').select('de');
     cy.contains('button', 'Change Language').click();
     cy.contains('span.navbar-text', 'Hallo, my_name!');
+    cy.contains('a', 'Die Einstellungen').click();
+    cy.contains('a', 'Sprache').click();
+    cy.get('select').select('en');
+    cy.contains('button', 'Sprache ändern').click();
+    cy.wait(3000)
+    cy.get('button').eq(1).click();
   })
 })
