@@ -64,7 +64,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.$refs.name.$el.focus();
+    // this.$refs.name.$el.focus();
   },
   methods: {
     goToCities: function() {
