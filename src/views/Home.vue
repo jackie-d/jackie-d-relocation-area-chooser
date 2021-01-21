@@ -11,7 +11,7 @@
                   {{ $t('dashboard.description') }}
                 </p>
                 <div>
-                  <mdb-btn v-on:click="start" color="primary" size="lg" icon="globe">{{ $t('dashboard.start') }}</mdb-btn>
+                  <mdb-btn v-on:click="start" color="primary" size="lg" icon="play">{{ $t('dashboard.start') }}</mdb-btn>
                 </div>
                 <div class="mt-5 mb-5">
                   <mdb-btn v-on:click="goToHistory" color="primary" size="md" icon="caret-square-left">{{ $t('dashboard.history') }}</mdb-btn>

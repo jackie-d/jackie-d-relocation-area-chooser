@@ -1,17 +1,17 @@
 {
   "common": {
     "details": "Details",
-    "select": "Choose this",
+    "select": "I like this one",
     "close": "Close",
     "hello_name": "Hello, {name}!",
     "weather_details": "Weather Details",
     "forecast_details": "Forecast Details",
     "city_1_title": "Amsterdam",
-    "city_1_desc": "<b>A nice city in the middle of the waters of the north</b><br /><br />Description",
+    "city_1_desc": "<b>A nice city in a myriad of canals and a very modern culture</b><br /><br />Amsterdam is one of the greatest small cities in the world. From Amsterdam canals to world-famous Amsterdam museums and historical Amsterdam sights, it is one of the most romantic and beautiful cities in Europe. Canal cruises are a popular way to see the city from the perspective of its canals.",
     "city_2_title": "Madrid",
-    "city_2_desc": "<b>A big city in a warm country with a lot of good food and fun</b><br /><br />Description",
+    "city_2_desc": "<b>A big city in a warm country with a lot of good food and fun</b><br /><br />Madrid is the capital city of Spain, located right in the centre of the Iberian Peninsula. Its geographical location grants good communications of the city with other Spanish regions. As capital of the country, it is the seat to the Spanish government institutions and the city of residence of Spanish Royal family.",
     "city_3_title": "Budapest",
-    "city_3_desc": "<b>A wonderful city in a magical country for a quiet and lovely experience</b><br /><br />Description",
+    "city_3_desc": "<b>A wonderful city in a magical country for a quiet and lovely experience</b><br /><br />Budapest, city, capital of Hungary, and seat of Pest megye (county). The city is the political, administrative, industrial, and commercial centre of Hungary. The site has been continuously settled since prehistoric times and is now the home of about one-fifth of the country's population.",
     "loading": "Loading",
     "error_aw": "Error: API over server limit"
   },
@@ -25,47 +25,48 @@
     "change_language": "Change Language"
   },
   "dashboard": {
-    "welcome": "Welcome to Relocation Area Chooser",
-    "description": "We want to help you find the right place for you! Start now and select your preferred destination with ease.",
-    "start": "Start the exploration!",
-    "history": "Or have a look at your history"
+    "welcome": "Find the perfect city for you",
+    "description": "Choose between our proposal the city that best suits your needs for your life",
+    "start": "Start now and find the perfect city",
+    "history": "Already found one? Get back to it!"
   },
   "footer": {
-    "title": "Find the right place for you",
-    "description": "Thanks to Relocation Area Chooser you can find now the best city, just follow the procedure and find it now!"
+    "title": "Choose between our updated data the best city for you",
+    "description": "You can see data from the last minute about the city conditions of weather, flights and other city informations"
   },
   "name": {
-    "title": "What's your name?",
-    "desc": "Let's start togheter our journey to discover a good destination for you",
-    "your_name": "Your name:",
+    "title": "Let's find the right city for you...",
+    "desc": "But before to start the journey to find it out, tell us your name.",
+    "your_name": "My name is:",
     "name_placeholder": "Write your name here",
     "invalid_name_title": "Insert your name",
-    "invalid_name_desc": "Please write down your name to get the to the next step"
+    "invalid_name_desc": "Please write down your name to get the to the next step",
+    "next": "Choose your preferred city"
   },
   "cities": {
-    "title": "Proposed cities",
-    "desc": "A quick look for the best areas for you relocation",
-    "start_selection": "Start your experience"
+    "title": "Our proposed cities",
+    "desc": "Start by having a quick look to the best areas for you relocation",
+    "start_selection": "Go to weather selection"
   },
   "weather": {
-    "title": "Have a look at the weather",
-    "desc": "Find out details and the best weather for your gladness. Select the one you prefer.",
-    "next_step": "Get into the next step",
-    "current_weather": "The current state is:"
+    "title": "Choose your preferred wheater",
+    "desc": "What's the weather like in these days on the cities?",
+    "next_step": "Go to flights selection",
+    "current_weather": "Now the weather is on..."
   },
   "flights": {
-    "title": "Find the best connection to your city",
-    "desc": "Look at the airports and flights nearby and have a good look at the best",
-    "next_step": "Get into the next step",
-    "flights_cost": "Prices for your flight",
-    "destination": "Destination",
-    "price": "Cost",
-    "time": "Start at",
-    "duration": "Duration time"
+    "title": "And if you would like to see the world...",
+    "desc": "Just get a ticket at the nearest airport! Discover now the best possibilites from the cities.",
+    "next_step": "Show your selection",
+    "flights_cost": "You'll fly for just...",
+    "destination": "To",
+    "price": "Price",
+    "time": "On",
+    "duration": "Dur."
   },
   "resume": {
-    "title": "Have a new look at your choice",
-    "desc": "Came to your final destination",
+    "title": "You just have a final decision",
+    "desc": "Review your selected cities and choose the one of your preference!",
     "next_step": "Move on to the review",
     "flights_cost": "Prices for your flight",
     "destination": "Destination",
@@ -80,8 +81,8 @@
     "chosen_for_both": "Your choiche for both the weather and the flights"
   },
   "result": {
-    "title": "The final destination of your choosing is:",
-    "next_step": "Save your result and get back to the home",
+    "title": "We have the city for you",
+    "next_step": "Save it and exit",
     "flights_cost": "Prices for your flight",
     "destination": "Destination",
     "price": "Cost",
@@ -93,11 +94,11 @@
     "chosen_for_flights": "Your choiche for the flights",
     "chosen_for_weather": "Your choiche for the weather",
     "chosen_for_both": "Your choiche for both the weather and the flights",
-    "congrats_name": "Very good choice {name}!!",
+    "congrats_name": "This seems to be the perfect city for you, nice work {name}!!",
     "back_to_history": "Get back to your history"
   },
   "history": {
-    "title": "Your past history for the relocation area",
-    "no_records": "History has no records at the current state."
+    "title": "Cities you already have choosen as your preferred",
+    "no_records": "No city selected yet. Start now to choose your city from the homepage."
   }
 }

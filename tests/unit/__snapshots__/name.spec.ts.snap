@@ -6,7 +6,7 @@ exports[`Name view Snapshot consistence 1`] = `
   <mdb-container-stub tag="div" style="height: 100%;">
     <section class="text-center">
       <h2 class="h1 pt-4">name.title</h2>
-      <p class="grey-text mb-5 mt-5 px-3">name.desc</p>
+      <p class="text-primary mb-5 mt-5 px-3">name.desc</p>
       <mdb-row-stub tag="div" class="justify-content-sm-center">
         <mdb-col-stub tag="div" sm="6">
           <mdb-card-stub tag="div" testimonial="true">

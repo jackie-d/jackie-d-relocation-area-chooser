@@ -97,7 +97,7 @@ const actions = {
         const flights = apiData.map(flight => {
           const airlines = flight.airlines.join(', ');
           return {
-            to: flight.cityTo+', '+flight.countryTo.name+' ('+airlines+')',
+            to: flight.cityTo+', '+flight.countryTo.name,//+' ('+airlines+')',
             price: flight.price,
             time: moment(flight.local_departure).format('DD MMM HH:mm'),
             duration: moment(flight.duration.total * 1000).format('HH:mm')

@@ -8,7 +8,7 @@
               {{ $t('flights.title') }}
             </h2>
 
-            <p class="grey-text mb-5 mt-5 px-3">{{ $t('flights.desc') }}</p>
+            <p class="text-primary mb-5 mt-5 px-3 font-weight-bold">{{ $t('flights.desc') }}</p>
           </section>
       <mdb-row>
         <mdb-col md="4" class="mt-2" v-for="(city, cityIndex) in cities" :key="city.name">
@@ -19,7 +19,7 @@
                   {{ city.name }}
                 </mdb-card-title>  
                 <mdb-card-text>
-                  <p style="font-size: smaller;" class="grey-text">{{ $t('flights.flights_cost') }}</p>
+                  <p class="text-primary font-weight-bold">{{ $t('flights.flights_cost') }}</p>
                   <mdb-row>
                     <mdb-col class="scrollbar scrollbar-primary">
                         <mdb-tbl sm>
@@ -46,19 +46,11 @@
                     </mdb-col>
                   </mdb-row>
                 </mdb-card-text>
-                <mdb-btn color="info" :disabled="true">
-                  <mdb-icon fas icon="question" @click="openDetails"/>
-                  {{ $t('common.details') }}
-                </mdb-btn>
-                <mdb-btn color="primary" v-on:click="select(cityIndex)">
-                  <mdb-icon fas icon="check-square" />
+                <mdb-btn color="primary" v-on:click="select(cityIndex)" style="width: 100%;">
+                  <mdb-icon fas icon="check-square" v-if="chosenCity == cityIndex" />
+                  <mdb-icon fas icon="stop" v-if="chosenCity != cityIndex" />
                   {{ $t('common.select') }}
                 </mdb-btn>
-                <div class="custom-control custom-checkbox custom-control-inline" style="position: absolute; bottom: 8px; right: -12px; z-index: 999;">
-                  <input type="checkbox" class="custom-control-input" id="defaultInline1" :checked="chosenCity == cityIndex">
-                  <label class="custom-control-label" for="defaultInline1"></label>
-                </div>
-                <div style="position: absolute; bottom: 0px; right: 0px; z-index: 1500; width: 40px; height: 40px;"></div>
               </mdb-card-body>
             </mdb-card>
         </mdb-col>

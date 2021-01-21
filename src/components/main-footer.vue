@@ -10,7 +10,7 @@
         </mdb-container>
         <div class="footer-copyright text-center py-3">
             <mdb-container fluid>
-            &copy; 2020 Copyright <a href="https://www.jackiedeglinnocenti.com"> Jackie D. </a>
+            &copy; 2020 Copyright <a href="https://www.jackiedeglinnocenti.com"> Relocation Area Chooser </a>
             </mdb-container>
         </div>
     </mdb-footer>

@@ -19,10 +19,10 @@
           <mdb-card class="mt-4">
             <mdb-card-body>
               <p class="font-weight-bold">{{ $t('result.weather') }}</p>
-              <p style="font-size: smaller;" class="grey-text">{{ $t('result.current_weather') }}</p>
+              <p class="text-primary font-weight-bold">{{ $t('result.current_weather') }}</p>
               <div v-if="cities[finalChosenCity()].forecast">
                 <img v-if="cities[finalChosenCity()].forecast" :src="cities[finalChosenCity()].forecast.iconUrl" />
-                <p class="mt-2 font-italic">{{ (cities[finalChosenCity()].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[finalChosenCity()].forecast || {}).temperature || '... °C' }}</span></p>
+                <h5 class="mt-2">{{ (cities[finalChosenCity()].forecast || {}).text || '...' }}, <span class="font-weight-bold">{{ (cities[finalChosenCity()].forecast || {}).temperature || '... °C' }}</span></h5>
               </div>
               <div v-if="cities[finalChosenCity()].forecast == undefined">
                 <div v-if="!accuweatherError" class="spinner-border text-light mt-4" role="status">
@@ -37,7 +37,7 @@
           <mdb-card class="mt-4">
             <mdb-card-body>
               <p class="font-weight-bold">{{ $t('result.flights') }}</p>
-              <p style="font-size: smaller;" class="grey-text">{{ $t('result.flights_cost') }}</p>
+              <p class="text-primary font-weight-bold">{{ $t('result.flights_cost') }}</p>
               <mdb-row class="mt-4">
                 <mdb-col class="scrollbar scrollbar-primary">
                     <mdb-tbl sm>
@@ -65,17 +65,6 @@
               </mdb-row>
             </mdb-card-body>
           </mdb-card>
-          <div class="mt-4">
-            <mdb-btn color="info" :disabled="true">
-              <mdb-icon fas icon="question" />
-              {{ $t('common.weather_details') }}
-            </mdb-btn>
-            <mdb-btn color="info" :disabled="true">
-              <mdb-icon fas icon="question" />
-              {{ $t('common.forecast_details') }}
-            </mdb-btn>
-          </div>
-
       </mdb-col>
 
     </mdb-row>

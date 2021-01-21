@@ -6,7 +6,7 @@
       <section class="text-center">
           <h2 class="h1 pt-4">{{ $t('name.title') }}</h2>
 
-          <p class="grey-text mb-5 mt-5 px-3">{{ $t('name.desc') }}</p>
+          <p class="text-primary font-weight-bold mb-5 mt-5 px-3">{{ $t('name.desc') }}</p>
           <mdb-row class="justify-content-sm-center">
 
             <mdb-col sm="6">
@@ -17,11 +17,12 @@
                   <mdb-card-title>{{ $t('name.your_name') }}</mdb-card-title>
                   <mdb-input 
                     v-model="name" 
+                    ref="name"
                   />
                   <hr/>
                   <mdb-btn color="primary" v-on:click="goToCities" :disabled="name == undefined || name == ''">
-                    <mdb-icon icon="eye" />
-                    Let's find the city
+                    <mdb-icon icon="play" />
+                    {{ $t('name.next') }}
                   </mdb-btn>
                 </mdb-card-body>
               </mdb-card>
@@ -61,6 +62,9 @@ export default Vue.extend({
       name: '',
       modal: false
     }
+  },
+  mounted() {
+    this.$refs.name.$el.focus();
   },
   methods: {
     goToCities: function() {
