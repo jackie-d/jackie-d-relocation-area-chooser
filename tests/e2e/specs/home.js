@@ -3,7 +3,7 @@
 describe('Home', () => {
   it('Render title', () => {
     cy.visit('http://localhost:8080')
-    cy.contains('h2', 'Welcome to Relocation Area Chooser')
+    cy.contains('h2', 'Find the perfect city for you')
     cy.get('button').eq(1).click()
     cy.location('pathname').should('match', /\/name$/);
     cy.get('input[type=text]').type('my_name');

@@ -13,7 +13,7 @@ exports[`Home Snapshot consistence 1`] = `
               dashboard.description
             </p>
             <div>
-              <mdb-btn-stub waves="true" tag="button" color="primary" size="lg" type="button" icon="globe">dashboard.start</mdb-btn-stub>
+              <mdb-btn-stub waves="true" tag="button" color="primary" size="lg" type="button" icon="play">dashboard.start</mdb-btn-stub>
             </div>
             <div class="mt-5 mb-5">
               <mdb-btn-stub waves="true" tag="button" color="primary" size="md" type="button" icon="caret-square-left">dashboard.history</mdb-btn-stub>

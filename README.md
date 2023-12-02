@@ -34,15 +34,11 @@ https://wireframe.cc/A4GBOu
 
 ### Hosting
 
-```
-https://jackied.azurewebsites.net
-```
+- https://relocation-area-chooser.web.app/ -
 
 ### GitHub
 
-```
-https://github.com/jackie-d/relocation-area-chooser
-```
+- https://github.com/jackie-d/relocation-area-chooser
 
 ## Configure API
 
@@ -54,7 +50,7 @@ VUE_APP_TEQUILA_API_KEY=
 ```
 
 - AccuWeather API ( https://developer.accuweather.com )
-- Tequila Kiwi API ( https://tequila.kiwi.com/ )
+- Tequila Kiwi API - Book & Search section ( https://tequila.kiwi.com/ )
 
 ## Techical Details
 
